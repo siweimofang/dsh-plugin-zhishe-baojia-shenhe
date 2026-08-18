@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-zhishe-baojia-shenhe",
-  "version": "0.1.0",
-  "description": "知设装修报价审核插件 - 装修报价单智能审核与风险识别（占坑）",
+  "version": "0.2.0",
+  "description": "知设装修报价审核插件 - 装修报价单智能审核与风险识别(异常单价识别+漏项检测+地区价格对标)",
   "type": "module",
   "files": ["lib"],
   "keywords": ["dsh-plugin", "装修", "报价", "审核"],
