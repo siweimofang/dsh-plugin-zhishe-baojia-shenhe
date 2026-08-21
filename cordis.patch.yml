@@ -1,0 +1,8 @@
+# DSH Cordis 配置补丁 - 报价审核插件
+tools:
+  - name: baojia_shenhe
+    description: "装修报价审核:输入报价单文本,智能识别异常单价/漏项/价格偏差,生成审核报告"
+    plugin: dsh-plugin-zhishe-baojia-shenhe
+  - name: baojia_item_check
+    description: "单项价格查询:查询某个装修项目的合理价格区间"
+    plugin: dsh-plugin-zhishe-baojia-shenhe
