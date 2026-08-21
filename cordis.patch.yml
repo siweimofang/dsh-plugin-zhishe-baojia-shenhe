@@ -1,7 +1,11 @@
-# DSH Cordis 配置补丁 - 报价审核插件
+# DSH Cordis 配置补丁 - 报价审核插件 v0.3.0
+# 新增视觉OCR: 报价单截图/照片 → 自动提取文本 → 审核
 tools:
   - name: baojia_shenhe
-    description: "装修报价审核:输入报价单文本,智能识别异常单价/漏项/价格偏差,生成审核报告"
+    description: "装修报价审核:支持文本或图片输入,智能识别异常单价/漏项/价格偏差,生成审核报告"
+    plugin: dsh-plugin-zhishe-baojia-shenhe
+  - name: baojia_image_audit
+    description: "报价单图片审核:上传报价单截图/照片(支持多页),自动OCR提取+审核,适合拍照上传场景"
     plugin: dsh-plugin-zhishe-baojia-shenhe
   - name: baojia_item_check
     description: "单项价格查询:查询某个装修项目的合理价格区间"
