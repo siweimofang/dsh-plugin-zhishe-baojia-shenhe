@@ -1,0 +1,3892 @@
+{
+ "meta": {
+  "version": "1.0",
+  "generated_at": "2026-09-03",
+  "source": "zhishe-a2a/gotchas/data/v1.0/all_ku.json (全库598条)",
+  "count": 165,
+  "selection": "STAGE_01量房/STAGE_03报价签约全量 + STAGE_02设计/04施工/05主材/07验收/08维权中 problem_type∈{漏项,费用,欺诈,沟通} 且 severity∈{CRITICAL,HIGH} + 0904补合同审核侧主题(付款节奏/尾款/违约金/维权证据/材料品牌确认/保修)",
+  "fields_kept": [
+   "ku_id",
+   "title",
+   "stage",
+   "severity",
+   "problem_type",
+   "trade",
+   "material",
+   "trigger_keywords",
+   "how_to_avoid"
+  ],
+  "usage": "规则匹配(trigger_keywords双向子串)+severity排序,topN硬限; 全库语义检索(gotchas_api)为后续增强不进首版"
+ },
+ "entries": [
+  {
+   "ku_id": "GZ-SY-00025",
+   "title": "改造项目缺乏前置统筹，管道走向和平台抬升等事后调整埋下协同隐患",
+   "stage": "STAGE_01",
+   "severity": "SEV_CRITICAL",
+   "problem_type": [
+    "TYPE_COMMUNICATION",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_DESIGN",
+    "TRADE_PLUMBING"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "统筹",
+    "管道走向",
+    "高差",
+    "护栏间距",
+    "协同"
+   ],
+   "how_to_avoid": "1. 叠墅/联排改造前，必须召开上下户+施工方+物业四方协调会，逐一对齐改造方案。2. 涉及共用结构（排水、供水、墙体、平台）的改动，必须双方签字确认后才可施工。3. 聘请独立第三方设计师出整体改造方案图（涵盖上下两户），避免各自设计导致的冲突。4. 合同中写入'涉及共用结构的改造需邻居书面同意'条款，未经同意不得施工。5. 保留所有测量数据和原始图纸，作为后续改造的参考基准。"
+  },
+  {
+   "ku_id": "GZ-SY-00244",
+   "title": "燃气热水器烟道燃气未预留",
+   "stage": "STAGE_02",
+   "severity": "SEV_CRITICAL",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_PLUMBING",
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [
+    "MAT_APPLIANCE"
+   ],
+   "trigger_keywords": [
+    "燃气热水器",
+    "烟道孔",
+    "瓷砖",
+    "打孔",
+    "补砖"
+   ],
+   "how_to_avoid": "1. 设计阶段确认热水器类型（燃气/电/壁挂炉）。2. 燃气热水器：提前在墙体预留烟道孔（直径60-100mm），确认燃气管道位置和电源（10A）。3. 电热水器：确认安装墙为承重墙，预留16A独立回路。4. 将热水器型号和安装要求写入设计交底。"
+  },
+  {
+   "ku_id": "GZ-SY-00058",
+   "title": "装修合同终止扣10%违约金+已发生成本，实际退款远低于预期",
+   "stage": "STAGE_03",
+   "severity": "SEV_CRITICAL",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_COMMUNICATION"
+   ],
+   "trade": [
+    "TRADE_DESIGN"
+   ],
+   "material": [
+    "MAT_NONE"
+   ],
+   "trigger_keywords": [
+    "违约金",
+    "退款",
+    "合同终止",
+    "首付",
+    "维权"
+   ],
+   "how_to_avoid": "1. 签约前：仔细阅读合同终止条款，明确违约金比例(行业惯例5-10%)和已发生成本的计算方式。2. 要求合同明确列出'已发生成本'的具体项目(设计费、材料采购费、人工费)及各项上限。3. 谈判争取：将违约金从10%降至5%，并要求'已发生成本'需提供发票/收据证明。4. 替代方案：如遇问题先协商'暂停'而非'终止'，保留资金冻结待后续项目使用，避免违约金损失。"
+  },
+  {
+   "ku_id": "GZ-SY-00160",
+   "title": "别墅混用报价版本材料错乱",
+   "stage": "STAGE_03",
+   "severity": "SEV_CRITICAL",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_QUALITY",
+    "TYPE_FRAUD"
+   ],
+   "trade": [
+    "TRADE_DESIGN"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "别墅",
+    "报价单",
+    "材料降级",
+    "渗水",
+    "防水"
+   ],
+   "how_to_avoid": "1. 签约前确认装修公司有别墅项目资质和对应报价版本。2. 合同中明确注明“按别墅标准报价及施工”，附材料品牌清单。3. 要求施工方提供别墅工程部人员名单及过往案例。4. 材料进场时核对品牌型号，与别墅报价单一致。5. 发现混用立即停工，要求按合同整改。"
+  },
+  {
+   "ku_id": "GZ-SY-00053",
+   "title": "设备间无供暖致冬季管道冻裂，引发墙体渗水",
+   "stage": "STAGE_04",
+   "severity": "SEV_CRITICAL",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_PLUMBING",
+    "TRADE_WATERPROOF"
+   ],
+   "material": [
+    "MAT_PIPE"
+   ],
+   "trigger_keywords": [
+    "冻裂",
+    "渗水",
+    "设备间",
+    "无供暖",
+    "发霉"
+   ],
+   "how_to_avoid": "1. 装修前检查：确认所有非供暖区域(设备间/管道井/北向阳台)的管道是否有保温层。2. 防冻处理：对低温区域管道包裹橡塑保温棉(厚度>=20mm)，关键部位加装电伴热带。3. 设计阶段：评估设备间是否需要延伸供暖系统或加装独立采暖。4. 二手房必查：向物业/前业主了解历史冻害记录，重点检查墙体缝隙和管道接口。"
+  },
+  {
+   "ku_id": "GZ-SY-00180",
+   "title": "非承重墙安装热水器未加固坠落",
+   "stage": "STAGE_04",
+   "severity": "SEV_CRITICAL",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_BATHROOM"
+   ],
+   "material": [
+    "MAT_HARDWARE"
+   ],
+   "trigger_keywords": [
+    "轻体砖墙",
+    "热水器",
+    "膨胀螺栓",
+    "坠落",
+    "空心砖"
+   ],
+   "how_to_avoid": "1. 安装前确认墙体材质，若是非承重墙（轻体砖、空心砖），必须采用穿墙螺杆加固或加装钢支架。2. 60L以上热水器，优先选择承重墙安装；若只能装非承重墙，要求施工方使用穿墙螺杆，并在墙背面加装钢板垫片。3. 80L以上热水器，建议使用落地支架辅助承重，分担墙体压力。4. 安装完成后，用手用力摇晃热水器，检查是否牢固；定期检查螺栓有无松动。"
+  },
+  {
+   "ku_id": "GZ-SY-00186",
+   "title": "打压试验不合格仍验收导致漏水隐患",
+   "stage": "STAGE_04",
+   "severity": "SEV_CRITICAL",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_PLUMBING"
+   ],
+   "material": [
+    "MAT_PIPE"
+   ],
+   "trigger_keywords": [
+    "打压试验",
+    "0.4MPa",
+    "渗水",
+    "接头渗漏",
+    "返工"
+   ],
+   "how_to_avoid": "1. 打压前确认所有出水口关闭，进水阀打开充满水后关闭。2. 试验压力必须达到工作压力的1.5倍且不低于0.6MPa，家装建议0.8MPa。3. 稳压30分钟，期间每5分钟记录一次压力表读数，压降不超过0.05MPa为合格。4. 打压期间逐个检查所有焊口、接头，用纸巾擦拭看有无渗水。5. 合格后拍照记录压力表读数，作为验收凭证。6. 若不合格，要求施工方排查修复后重新打压，直至合格。"
+  },
+  {
+   "ku_id": "GZ-SY-00190",
+   "title": "防水涂刷遍数不足导致渗漏",
+   "stage": "STAGE_04",
+   "severity": "SEV_CRITICAL",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_WATERPROOF"
+   ],
+   "material": [
+    "MAT_CEMENT"
+   ],
+   "trigger_keywords": [
+    "防水涂刷",
+    "渗漏",
+    "墙面发霉",
+    "防水高度",
+    "返工"
+   ],
+   "how_to_avoid": "1. 防水涂刷至少三遍，第一遍横向、第二遍纵向、第三遍补刷薄弱部位（管根、阴阳角）。2. 淋浴区墙面防水高度不低于1800mm，非淋浴区不低于300mm，洗手盆墙面不低于1200mm。3. 地面防水上翻墙面不低于300mm。4. 每遍涂刷待干透后再刷下一遍，总厚度不低于1.5mm。5. 防水层完全干燥后做闭水试验，蓄水深度不低于20mm，时间不少于48小时。6. 闭水试验期间到楼下检查顶板，确认无渗漏后再贴砖。"
+  },
+  {
+   "ku_id": "GZ-SY-00200",
+   "title": "热水器插座位于正下方易进水",
+   "stage": "STAGE_04",
+   "severity": "SEV_CRITICAL",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [
+    "MAT_APPLIANCE"
+   ],
+   "trigger_keywords": [
+    "插座",
+    "热水器",
+    "进水",
+    "短路",
+    "跳闸"
+   ],
+   "how_to_avoid": "1. 设计阶段明确热水器插座位置，严禁在正下方。2. 水电改造时预留插座在热水器侧面或上方。3. 确认使用16A专用插座并安装漏电保护器。4. 安装热水器后检查插座位置是否合规。"
+  },
+  {
+   "ku_id": "GZ-SY-00228",
+   "title": "卫生间浴霸排风照明共用回路",
+   "stage": "STAGE_04",
+   "severity": "SEV_CRITICAL",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_PLUMBING",
+    "TRADE_BATHROOM"
+   ],
+   "material": [
+    "MAT_WIRE"
+   ],
+   "trigger_keywords": [
+    "浴霸",
+    "排风",
+    "照明",
+    "过载",
+    "烧焦"
+   ],
+   "how_to_avoid": "1. 水电交底时，明确要求卫生间取暖、排风、照明分三路独立回路，并写入合同。2. 验收时检查配电箱：卫生间应有至少3个独立空开分别对应取暖、排风、照明。3. 确认排风扇电源线为常电（不受照明开关控制），可单独控制。4. 浴霸回路必须使用4平方线，并单独设置漏电保护。"
+  },
+  {
+   "ku_id": "GZ-SY-00272",
+   "title": "未查承重墙就拆改，结构安全与罚款双风险",
+   "stage": "STAGE_04",
+   "severity": "SEV_CRITICAL",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_DEMOLISH"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "承重墙",
+    "拆改",
+    "结构安全",
+    "罚款",
+    "二手房"
+   ],
+   "how_to_avoid": "1. 开工前向物业或开发商索取房屋结构图纸，明确承重墙位置。2. 若无图纸，请结构工程师或资深设计师现场勘察，用钢筋探测仪等工具确认墙体性质。3. 在拆改方案中标注所有承重墙，严禁任何形式的拆改或开洞。4. 将结构确认结果写入施工合同附件，明确施工方不得擅自拆改承重墙。5. 拆改前到物业办理审批手续，获得书面许可后再动工。"
+  },
+  {
+   "ku_id": "GZ-SY-00298",
+   "title": "闭水试验未做或走过场致防水缺陷遗漏",
+   "stage": "STAGE_04",
+   "severity": "SEV_CRITICAL",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_WATERPROOF",
+    "TRADE_BATHROOM"
+   ],
+   "material": [
+    "MAT_CEMENT"
+   ],
+   "trigger_keywords": [
+    "闭水试验",
+    "防水层",
+    "渗水",
+    "管道根部",
+    "返工"
+   ],
+   "how_to_avoid": "1. 防水施工完成后，封堵地漏和门口，蓄水深度2-3cm。2. 蓄水时间不少于24小时（行业实际执行标准，48小时为规范上限，非必须）。3. 前2小时为重点观察期：到楼下查看管道根部、墙角有无渗漏，发现即返工，无需等满。4. 24小时后最终确认：楼下顶棚、管道根部无渗漏，拍照+签字。5. 闭水试验合格后方可进行瓦工铺贴，试验记录作为验收依据存档。"
+  },
+  {
+   "ku_id": "GZ-SY-00329",
+   "title": "吊柜固定不牢存在脱落隐患",
+   "stage": "STAGE_04",
+   "severity": "SEV_CRITICAL",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_CABINET"
+   ],
+   "material": [
+    "MAT_BOARD",
+    "MAT_HARDWARE"
+   ],
+   "trigger_keywords": [
+    "吊柜脱落",
+    "固定不牢",
+    "膨胀螺丝",
+    "空心砖墙",
+    "安全隐患"
+   ],
+   "how_to_avoid": "1. 安装吊柜前，确认墙体类型，空心砖或轻质墙必须加固。2. 在墙面或楼板钻孔，钉入木模或固定龙骨，将吊柜牢固固定。3. 使用专用吊柜挂件或膨胀螺栓，确保每个固定点承重达标。4. 安装后做承重测试，如悬挂重物检查是否松动。5. 在合同中明确吊柜固定工艺要求，验收时重点检查。"
+  },
+  {
+   "ku_id": "GZ-SY-00352",
+   "title": "阳台打通前未确认墙体性质致结构风险",
+   "stage": "STAGE_04",
+   "severity": "SEV_CRITICAL",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_DEMOLISH"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "承重墙",
+    "阳台打通",
+    "墙体拆除",
+    "结构安全",
+    "加固"
+   ],
+   "how_to_avoid": "1. 动工前必须向物业或开发商索取原始建筑结构图，确认阳台与客厅间墙体是否为承重墙或配重墙。2. 若无图纸，可请结构工程师现场勘测（敲击听声、查看厚度、钢筋探测仪扫描）。3. 承重墙、配重墙严禁拆除，只能保留并做装饰性处理（如包门套、做隐形门）。4. 若确需拆除非承重墙，需向物业提交拆改申请，获批后方可施工。5. 在合同中明确约定：若因施工方未核实墙体性质擅自拆除，一切损失由施工方承担。"
+  },
+  {
+   "ku_id": "GZ-SY-00026",
+   "title": "阳光房排水设计未考虑邻户边界，单向排水导致雨水溢入邻居家",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_DESIGN",
+    "TYPE_COMMUNICATION"
+   ],
+   "trade": [
+    "TRADE_DESIGN",
+    "TRADE_DOOR"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "阳光房",
+    "排水槽",
+    "溢水",
+    "邻户边界",
+    "导流"
+   ],
+   "how_to_avoid": "1. 阳光房设计阶段必须考虑排水方向：排水应朝向自家区域，不能朝邻居方向排水。2. 与邻户共用的边界处，必须设计独立排水槽或挡水檐，实现'各自排水、互不干涉'。3. 下单生产前，现场实测确认高差和排水方向（不能只看图纸）。4. 如果是叠墅/联排，阳光房方案需提前告知邻居并书面确认排水方案。5. 阳光房合同中写明'排水问题由厂家负责改造，费用由设计失误方承担'。"
+  },
+  {
+   "ku_id": "GZ-SY-00045",
+   "title": "地热分水器+洗衣机+扫地机器人挤在同一区域，空间不足导致柜门无法正常开关",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_DESIGN",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_PLUMBING",
+    "TRADE_CABINET"
+   ],
+   "material": [
+    "MAT_PIPE",
+    "MAT_APPLIANCE"
+   ],
+   "trigger_keywords": [
+    "分水器",
+    "洗衣机",
+    "扫地机器人",
+    "柜门开关",
+    "检修口"
+   ],
+   "how_to_avoid": "1. 设计阶段必须精确列出所有设备的尺寸（宽×深×高），包括开门/开盖方向所需空间。2. 分水器位置优先放在管道井附近（减少管路长度），且必须预留≥700mm宽×800mm高的检修空间。3. 洗衣机与分水器不要放在同一个柜体内，避免水管漏水损坏洗衣机。4. 扫地机器人基站需预留上方300mm空间（开盖取尘盒）和前方500mm空间（进出通道）。5. 用1:50平面图标注所有设备位置和开门方向，确认无冲突后再下单定制柜体。"
+  },
+  {
+   "ku_id": "GZ-SY-00056",
+   "title": "楼梯开口改动影响下水走向，必须现场勘查确认",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COMMUNICATION"
+   ],
+   "trade": [
+    "TRADE_DEMOLISH",
+    "TRADE_PLUMBING"
+   ],
+   "material": [
+    "MAT_PIPE"
+   ],
+   "trigger_keywords": [
+    "楼梯",
+    "下水",
+    "排污管",
+    "现场勘查",
+    "改造"
+   ],
+   "how_to_avoid": "1. 设计阶段：获取原始排水图纸(向开发商/物业)，标注所有管道位置和走向。2. 现场勘查：实地查看楼下管道井分布、主排水管位置、地漏位置，拍照记录。3. 方案验证：楼梯开口方案必须与排水方案同步评审，确认无冲突后再开工。4. 预留弹性：设计方案中标注备选管道走向，施工时如遇冲突可快速调整。"
+  },
+  {
+   "ku_id": "GZ-SY-00083",
+   "title": "忽视老人儿童特殊照度需求",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_QUALITY"
+   ],
+   "trade": [
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [
+    "MAT_APPLIANCE"
+   ],
+   "trigger_keywords": [
+    "照度",
+    "老人",
+    "儿童",
+    "频闪",
+    "走廊"
+   ],
+   "how_to_avoid": "1. 装修前明确居住成员构成，记录老人、儿童的活动区域和特殊需求。2. 老人房和卫生间照度提高至500勒克斯以上，并增加夜间地脚灯、感应灯。3. 儿童房选用无频闪、无蓝光危害的灯具（显色指数Ra>90），照度控制在300-500勒克斯，避免直射眼睛。4. 在楼梯、走廊等易跌倒区域设置局部重点照明。5. 与设计师沟通时主动提出特殊人群需求，要求在设计方案中体现。"
+  },
+  {
+   "ku_id": "GZ-SY-00084",
+   "title": "忽视生理心理反应致视觉疲劳",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_COMMUNICATION"
+   ],
+   "trade": [
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [
+    "MAT_APPLIANCE"
+   ],
+   "trigger_keywords": [
+    "低瓦数",
+    "昏暗",
+    "眼睛干涩",
+    "压抑",
+    "近视"
+   ],
+   "how_to_avoid": "1. 按空间功能选择合适色温：卧室2700-3000K暖光、客厅3000-4000K中性光、书房4000-5000K自然光。2. 确保基础照度达标，工作区（书桌、厨房操作台）增加局部照明至500勒克斯以上。3. 选择显色指数Ra>80的灯具，避免色彩失真。4. 避免频闪，选购有3C认证的LED灯具，或用手机摄像头检测频闪。5. 设计时考虑人的心理感受，用暖光营造放松氛围，冷光用于工作区。6. 入住后观察家人反应，如有不适及时调整灯具。"
+  },
+  {
+   "ku_id": "GZ-SY-00112",
+   "title": "孕妇夜间照明不足易摔倒",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "孕妇",
+    "夜间",
+    "摸黑",
+    "走廊",
+    "摔倒"
+   ],
+   "how_to_avoid": "1. 设计阶段主动询问业主家庭是否有孕妇、老人、儿童等特殊人群，并记录在需求清单中。2. 若涉及孕妇，照明方案必须包含可调光主灯（8-10W，支持无级调光）、床头台灯（5-10W，可调光）、1-2组灯带（5-10W，安装于床底或踢脚线）以及小夜灯（0.1-0.5W，常亮或感应式）。3. 所有灯具控制器需设置在床头和门口双控，方便孕妇无需下床即可调节。4. 在合同中明确写入特殊照明配置清单，避免后期增项。5. 施工阶段预留调光线路和智能控制模块，确保后期可加装。"
+  },
+  {
+   "ku_id": "GZ-SY-00119",
+   "title": "卧室智能照明缺起夜模式易绊倒",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "起夜模式",
+    "控制线",
+    "婴儿床",
+    "明线",
+    "踢到"
+   ],
+   "how_to_avoid": "1. 设计阶段明确卧室需要三种模式：睡前（全关）、起夜（地脚灯或床头灯5%亮度）、晨起（窗帘渐开+灯光渐亮）。2. 在水电交底时，床头两侧各预留一个智能开关底盒，并引零线；地面或墙脚预留起夜灯电源。3. 选择支持调光和场景联动的智能面板，设置一键全关和起夜模式。4. 验收时实测：按床头开关能否关闭所有灯，起夜灯亮度是否柔和且不刺眼。5. 若已装修完，可选用无线智能灯泡+人体传感器替代，但需确认网络稳定性。"
+  },
+  {
+   "ku_id": "GZ-SY-00171",
+   "title": "未做1:1模拟放线致布局冲突返工",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_QUALITY"
+   ],
+   "trade": [
+    "TRADE_DESIGN",
+    "TRADE_PLUMBING",
+    "TRADE_TILE"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "放线",
+    "布局",
+    "插座",
+    "返工",
+    "水电"
+   ],
+   "how_to_avoid": "1. 在签订合同前，明确要求装修公司提供1:1模拟放线服务，并写入合同条款。2. 开工前，要求设计师、工长、业主三方到场，在毛坯房内按图纸弹线定位所有家具、家电、开关插座、水点位。3. 放线完成后，业主亲自走一遍动线，模拟日常使用场景，检查是否有遮挡、冲突。4. 对发现的问题当场修改图纸，确认后再开始施工。5. 放线成果拍照存档，作为后续验收的参照基准。"
+  },
+  {
+   "ku_id": "GZ-SY-00231",
+   "title": "未做生活习惯调研致方案返工",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COMMUNICATION"
+   ],
+   "trade": [
+    "TRADE_DESIGN"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "身高",
+    "橱柜高度",
+    "弯腰",
+    "返工",
+    "定制"
+   ],
+   "how_to_avoid": "1. 设计前必须使用标准化生活习惯调研表（含32项关键因素）对业主进行逐项访谈，并记录在案。2. 针对每项因素，在方案中明确对应的设计响应（如身高体重对应台面高度、左右手对应开关位置、起夜次数对应灯光模式），形成'需求-设计'对照表。3. 将调研结果和设计响应表作为设计合同附件，由业主签字确认。4. 在方案汇报时，逐项向业主确认是否满足其生活习惯，避免遗漏。5. 对于特殊需求（如残障、信仰、特殊癖好），需单独出具专项设计方案并重点审核。"
+  },
+  {
+   "ku_id": "GZ-SY-00233",
+   "title": "中央空调未预留吊顶和冷媒管位",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_DESIGN",
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "中央空调",
+    "吊顶",
+    "冷媒管",
+    "开槽",
+    "工期延误"
+   ],
+   "how_to_avoid": "1. 设计阶段明确空调类型，中央空调需提供设备尺寸和安装图纸。2. 吊顶设计时预留足够高度，并标注冷媒管和冷凝水管走向。3. 确认外机位尺寸和承重，预留检修空间。4. 水电交底时与空调安装方同步确认预留条件。"
+  },
+  {
+   "ku_id": "GZ-SY-00235",
+   "title": "新风系统未预留管道和主机位",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_DESIGN",
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "新风系统",
+    "管道",
+    "主机位",
+    "明管",
+    "壁挂式"
+   ],
+   "how_to_avoid": "1. 设计阶段决定是否安装新风及类型。2. 吊顶设计时预留主机检修口和管道空间。3. 水电交底时确定外墙开孔位置。4. 管道走向避开梁柱，提前与结构工程师沟通。"
+  },
+  {
+   "ku_id": "GZ-SY-00236",
+   "title": "地暖未预留地面抬高空间",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_DESIGN",
+    "TRADE_WATERPROOF"
+   ],
+   "material": [
+    "MAT_PIPE"
+   ],
+   "trigger_keywords": [
+    "地暖",
+    "地面抬高",
+    "入户门",
+    "找平",
+    "家具尺寸"
+   ],
+   "how_to_avoid": "1. 设计阶段确定供暖方式。2. 测量原始层高和门洞高度，预留地暖抬升空间。3. 提前与门厂家确认门洞预留尺寸。4. 地面找平前完成地暖管道铺设。"
+  },
+  {
+   "ku_id": "GZ-SY-00238",
+   "title": "智能开关未预留零线致安装受阻",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [
+    "MAT_WIRE"
+   ],
+   "trigger_keywords": [
+    "智能开关",
+    "零线",
+    "火线",
+    "闪烁",
+    "掉线"
+   ],
+   "how_to_avoid": "1. 设计阶段确定是否使用智能开关，并告知水电工。2. 要求水电工在每个开关盒内预留零线（即使暂不使用，成本极低）。3. 水电交底时明确要求所有开关盒预留零火线，与电工强调智能开关需求。4. 水电验收时用测电笔逐一检查开关盒内线路，确认零线到位。5. 若已完工，可考虑使用单火版智能开关，但需确认灯具功率匹配（LED灯功率过低会闪烁）。"
+  },
+  {
+   "ku_id": "GZ-SY-00239",
+   "title": "燃气热水器未预留烟道和燃气接口",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_DESIGN",
+    "TRADE_PLUMBING"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "燃气热水器",
+    "烟道",
+    "燃气接口",
+    "打孔",
+    "瓷砖"
+   ],
+   "how_to_avoid": "1. 设计阶段确定热水器类型和位置。2. 墙体施工前预留烟道孔。3. 燃气管道改造需提前申请并预留接口。4. 确认电源位置和功率（一般16A）。"
+  },
+  {
+   "ku_id": "GZ-SY-00242",
+   "title": "冰箱尺寸未确认致橱柜冲突",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_CABINET",
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [
+    "MAT_APPLIANCE"
+   ],
+   "trigger_keywords": [
+    "冰箱",
+    "对开门",
+    "橱柜",
+    "尺寸预留",
+    "返工"
+   ],
+   "how_to_avoid": "1. 设计阶段要求业主提供冰箱具体型号或尺寸（宽深高）。2. 预留尺寸时在冰箱实际尺寸基础上两侧各加50mm散热缝。3. 确认冰箱位置附近有独立回路插座（10A或16A），且不受总开关控制。4. 将冰箱尺寸和电路要求写入设计图纸和合同备注。"
+  },
+  {
+   "ku_id": "GZ-SY-00243",
+   "title": "洗衣机烘干机水电未预留",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_PLUMBING",
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [
+    "MAT_APPLIANCE"
+   ],
+   "trigger_keywords": [
+    "洗衣机",
+    "烘干机",
+    "阳台",
+    "电源",
+    "排水"
+   ],
+   "how_to_avoid": "1. 设计阶段确认洗衣机烘干机是并排还是叠放，并测量空间尺寸。2. 预留两个进水口、两个地漏（或一个三通）、两个10A插座。3. 烘干机若为排风式，预留排湿管孔；若为冷凝式，确认排水位置。4. 叠放时确认总高度≤1700mm，并预留稳固基座。"
+  },
+  {
+   "ku_id": "GZ-SY-00245",
+   "title": "洗碗机尺寸水电未确认",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_CABINET",
+    "TRADE_PLUMBING"
+   ],
+   "material": [
+    "MAT_APPLIANCE"
+   ],
+   "trigger_keywords": [
+    "洗碗机",
+    "嵌入式",
+    "橱柜深度",
+    "凸出",
+    "返工"
+   ],
+   "how_to_avoid": "1. 设计阶段确定洗碗机型号，获取精确尺寸。2. 橱柜预留空间比洗碗机尺寸每边大10-20mm。3. 在洗碗机位置预留独立进水、排水和10A电源，且不被柜体背板遮挡。4. 将洗碗机尺寸和安装要求写入橱柜定制合同。"
+  },
+  {
+   "ku_id": "GZ-SY-00246",
+   "title": "集成灶排烟燃气未预留",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_CABINET",
+    "TRADE_PLUMBING"
+   ],
+   "material": [
+    "MAT_APPLIANCE"
+   ],
+   "trigger_keywords": [
+    "集成灶",
+    "排烟管",
+    "公共烟道",
+    "橱柜",
+    "拆改"
+   ],
+   "how_to_avoid": "1. 设计阶段确认是否使用集成灶，并确定型号。2. 预留16A独立回路电源、燃气接口和排烟管（直径180mm）至公共烟道。3. 橱柜地柜深度≥600mm，高度匹配集成灶尺寸。4. 将集成灶安装要求写入设计图纸。"
+  },
+  {
+   "ku_id": "GZ-SY-00257",
+   "title": "全屋无独立控制插座回路",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "回路",
+    "跳闸",
+    "冰箱",
+    "断电",
+    "插座"
+   ],
+   "how_to_avoid": "1. 设计阶段明确要求每个房间至少一组独立回路插座。2. 在电路图中标注回路划分，确保冰箱、弱电箱等关键设备单独回路。3. 与电工交底时确认回路分配方案。4. 验收时测试每个回路的独立控制功能。"
+  },
+  {
+   "ku_id": "GZ-SY-00260",
+   "title": "全屋网络布线遗漏网口",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "网口",
+    "网络",
+    "WiFi",
+    "信号",
+    "书房"
+   ],
+   "how_to_avoid": "1. 设计阶段在每个房间标注网口位置，弱电箱至各房间星形布线。2. 使用超六类网线，满足千兆以上带宽需求。3. 确定AP面板或路由器位置（房屋中心），预留电源和网线。4. 大户型（>120㎡）建议AC+AP方案，每个房间预留网口。5. 验收时用网线测试仪确认每根线缆通断。"
+  },
+  {
+   "ku_id": "GZ-SY-00265",
+   "title": "入墙式花洒未预埋阀体，贴砖后无法改",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_PLUMBING",
+    "TRADE_TILE"
+   ],
+   "material": [
+    "MAT_PIPE"
+   ],
+   "trigger_keywords": [
+    "入墙式花洒",
+    "预埋阀体",
+    "明装花洒",
+    "冷热水口",
+    "贴砖"
+   ],
+   "how_to_avoid": "1. 设计阶段确定花洒款式，明确是入墙式还是明装式。2. 入墙式花洒需在水电改造时预埋阀体，确认墙体厚度≥60mm。3. 将花洒型号和安装图纸提供给水电工，确认预埋深度和间距。4. 在瓦工进场前完成阀体预埋并拍照留底。5. 贴砖前再次核对阀体位置与瓷砖排版是否冲突。"
+  },
+  {
+   "ku_id": "GZ-SY-00266",
+   "title": "墙排马桶未砌假墙，排污口位置错误",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_PLUMBING",
+    "TRADE_TILE"
+   ],
+   "material": [
+    "MAT_PIPE"
+   ],
+   "trigger_keywords": [
+    "墙排马桶",
+    "假墙",
+    "排污口",
+    "防水层",
+    "壁挂式"
+   ],
+   "how_to_avoid": "1. 设计阶段确定马桶类型，墙排马桶需提前规划假墙位置。2. 确认假墙是否为承重墙，承重墙需采用落地支架方案。3. 水电改造时按墙排马桶要求预留排污口（离地高度约200-250mm）。4. 假墙砌筑前确认水箱型号和安装尺寸。5. 瓦工进场前完成假墙砌筑和管路预埋。"
+  },
+  {
+   "ku_id": "GZ-SY-00270",
+   "title": "中央空调冷凝水无排水管，吊顶泡水",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_PLUMBING",
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [
+    "MAT_PIPE"
+   ],
+   "trigger_keywords": [
+    "冷凝水",
+    "排水管",
+    "吊顶",
+    "泡水",
+    "中央空调"
+   ],
+   "how_to_avoid": "1. 设计阶段确认空调类型，中央空调需规划冷凝水排水路径。2. 冷凝水排水管坡度≥1%，接入最近地漏或污水管。3. 排水管需做保温，防止冬季结冰。4. 分体空调预留冷凝水孔，孔径≥50mm。5. 安装完成后通水测试，确认排水顺畅无渗漏。"
+  },
+  {
+   "ku_id": "GZ-SY-00342",
+   "title": "厨房净宽不足导致操作拥挤",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_CABINET"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "净宽",
+    "拥挤",
+    "冰箱门",
+    "洗碗机"
+   ],
+   "how_to_avoid": "1. 设计前测量厨房实际净宽（墙到墙距离），单列布置必须≥1500mm，双列布置≥2100mm。2. 若原始户型不满足，考虑调整墙体或采用开放式厨房（需确认当地燃气政策）。3. 在图纸上标注净宽尺寸，并模拟人通过、开柜门、开冰箱门的场景。4. 与设计师确认动线（洗-切-炒）各区域宽度，确保操作区≥600mm。5. 签订合同前，用卷尺实地复核设计图纸上的尺寸。"
+  },
+  {
+   "ku_id": "GZ-SY-00344",
+   "title": "操作台长度不足2400mm导致功能缺失",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_CABINET"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "操作台",
+    "备餐区",
+    "小户型",
+    "砧板",
+    "移动推车"
+   ],
+   "how_to_avoid": "1. 设计前测量厨房可做台面的总长度（含转角）。2. 若总长不足2400mm，考虑调整布局（如L型利用转角）或压缩非必要功能（如减少水槽尺寸）。3. 确保备餐区（水槽与灶台之间）至少600mm宽。4. 若空间实在有限，考虑将部分功能外移（如小家电放餐边柜）。5. 在图纸上标注各功能区长度，模拟洗切炒动线。"
+  },
+  {
+   "ku_id": "GZ-SY-00348",
+   "title": "阳台吧台未预留上下水",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_PLUMBING",
+    "TRADE_DESIGN"
+   ],
+   "material": [
+    "MAT_PIPE"
+   ],
+   "trigger_keywords": [
+    "阳台吧台",
+    "上下水",
+    "水槽",
+    "引水管",
+    "开槽"
+   ],
+   "how_to_avoid": "1. 设计阳台吧台时，明确是否需要水槽，若需要，提前规划上下水。2. 在阳台地面或墙面预留水管接口，并做好防水。3. 若无法接上下水，可考虑用移动茶台或净饮机替代，但需预留电源。4. 与水电工交底时，明确标注阳台水点位置。"
+  },
+  {
+   "ku_id": "GZ-SY-00365",
+   "title": "未预留客厅与卧室合并条件",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_DESIGN",
+    "TRADE_DEMOLISH"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "承重墙",
+    "大横厅",
+    "次卧",
+    "户型改造",
+    "非承重墙"
+   ],
+   "how_to_avoid": "1. 设计前查看建筑结构图，明确哪些墙体可拆。2. 若相邻卧室为非承重墙，在图纸上标注'可拆除'，并预留门洞封堵条件。3. 与业主沟通未来家庭结构变化（如孩子长大、老人同住），提前规划可分可合方案。4. 采用双移门或折叠门替代固定隔墙，日常打开连通，需要时关闭独立。"
+  },
+  {
+   "ku_id": "GZ-SY-00375",
+   "title": "厨房点位预留不足导致后期加装难",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_PLUMBING",
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "插座",
+    "岛台",
+    "地插",
+    "布线",
+    "厨房"
+   ],
+   "how_to_avoid": "1. 设计阶段列出所有可能使用的小家电清单（含未来可能添置的），逐一标注摆放位置。2. 在岛台至少预留2个电源（含USB）、1个上下水点位（若岛台设水槽）。3. 次厨/西厨区独立预留一组电源和上下水，避免与主厨区共用。4. 水电交底时，带着家电清单和设计师、工长现场逐点确认，并在墙上用粉笔标记。5. 在合同中明确点位数量与位置，验收时逐一核对。"
+  },
+  {
+   "ku_id": "GZ-SY-00386",
+   "title": "卫生间布局未匹配户型导致空间浪费",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_DESIGN",
+    "TRADE_BATHROOM"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "L形卫生间",
+    "淋浴房",
+    "钻石型",
+    "空间浪费",
+    "拆瓷砖"
+   ],
+   "how_to_avoid": "1. 量房后先确定卫生间形状，对照六种典型布局（长方形、正方形、L形、独立淋浴间、干湿分离、主卫套房）选择对应策略。2. L形卫生间优先考虑钻石型淋浴房，释放转角空间用于洗衣机或储物柜。3. 正方形卫生间采用三面利用法：洗手台+镜柜、淋浴+壁龛、马桶+吊柜。4. 长方形卫生间按浴缸区、洗手台区、马桶区三段式规划，浴缸旁预留浴缸架位置。5. 设计图纸必须标注每个区域的尺寸和功能，施工前与工长确认。"
+  },
+  {
+   "ku_id": "GZ-SY-00402",
+   "title": "无障碍模式未预留轮椅回转空间",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_DESIGN",
+    "TRADE_CABINET"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "无障碍",
+    "轮椅",
+    "回转空间",
+    "老人",
+    "倒车"
+   ],
+   "how_to_avoid": "1. 设计阶段测量卫生间净空，确保洗手台前方有≥1500mm回转直径；2. 若空间不足，采用侧方进入式洗手台，或选用可移动洗手台；3. 台下留空高度≥650mm，深度≥400mm，方便轮椅脚踏；4. 与设计师确认轮椅动线，模拟进出和转身动作。"
+  },
+  {
+   "ku_id": "GZ-SY-00406",
+   "title": "防溅插座位置避开水花飞溅范围",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_ELECTRICAL",
+    "TRADE_BATHROOM"
+   ],
+   "material": [
+    "MAT_APPLIANCE"
+   ],
+   "trigger_keywords": [
+    "防溅插座",
+    "水花",
+    "受潮",
+    "锈蚀",
+    "台盆"
+   ],
+   "how_to_avoid": "1. 插座位置应距离台盆边缘至少30cm，且高于台面20cm以上。2. 避免安装在龙头正后方或水花直接飞溅区域。3. 选用带防水盖的防溅插座，并确保安装时密封圈完好。4. 定期检查插座内部是否受潮，发现异常立即更换。"
+  },
+  {
+   "ku_id": "GZ-SY-00407",
+   "title": "儿童登高抽屉未设安全限位",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_DESIGN",
+    "TRADE_BATHROOM"
+   ],
+   "material": [
+    "MAT_HARDWARE"
+   ],
+   "trigger_keywords": [
+    "登高抽屉",
+    "限位器",
+    "摔倒",
+    "儿童安全",
+    "台盆"
+   ],
+   "how_to_avoid": "1. 儿童抽屉必须选用带阻尼和限位功能的滑轨，防止完全拉出。2. 抽屉边缘做圆角处理，避免尖角划伤。3. 在抽屉下方加装防夹手保护条。4. 设计时与业主确认儿童年龄和使用习惯，必要时增加锁定装置。"
+  },
+  {
+   "ku_id": "GZ-SY-00417",
+   "title": "卫浴收纳未预留电源导致智能设备无法安装",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_ELECTRICAL",
+    "TRADE_DESIGN"
+   ],
+   "material": [
+    "MAT_WIRE"
+   ],
+   "trigger_keywords": [
+    "插座预留",
+    "智能马桶盖",
+    "电热毛巾架",
+    "砸砖布线",
+    "防水重做"
+   ],
+   "how_to_avoid": "1. 设计阶段列出所有可能使用的智能卫浴设备清单（电动牙刷、吹风机、智能马桶盖、电热毛巾架、感应镜灯等）。2. 在洗手台旁至少预留2-3个插座（带防溅盒），马桶后方预留1个插座，电热毛巾架位置预留1个插座。3. 所有插座必须带防水盖，且远离淋浴区水汽范围。4. 水电改造前与设计师、电工三方确认插座位置和数量，并写入施工图。"
+  },
+  {
+   "ku_id": "GZ-SY-00456",
+   "title": "老人卧室未做适老化设计导致安全隐患",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_CABINET",
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "适老化",
+    "感应灯",
+    "挂衣杆",
+    "老人",
+    "防摔"
+   ],
+   "how_to_avoid": "1. 若为老人房，衣柜挂衣杆采用下拉式或电动升降式，确保老人站立即可轻松取放；2. 抽屉选用静音滑轨，减少开关噪音，避免打扰伴侣；3. 床边和通往卫生间的动线安装感应夜灯（光线柔和，避免刺眼）；4. 开关位置设在床头和门口双控，高度适当降低（约900mm）；5. 地面避免高低差，使用防滑地板或地毯；6. 在合同中明确适老化配置清单，逐项验收。"
+  },
+  {
+   "ku_id": "GZ-SY-00472",
+   "title": "玄关墙垛长度不足导致柜体无法安装",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_DESIGN",
+    "TRADE_CABINET"
+   ],
+   "material": [
+    "MAT_BOARD"
+   ],
+   "trigger_keywords": [
+    "墙垛",
+    "柜体",
+    "门套线",
+    "深度",
+    "长靴"
+   ],
+   "how_to_avoid": "1. 设计阶段用卷尺实测玄关两侧墙垛长度，并记录在图纸上。2. 鞋柜侧墙垛长度至少预留400mm，衣帽柜侧至少650mm，若不足则调整柜体方案或墙体改造。3. 下单定制前，复核柜体深度与墙垛尺寸的匹配性，确保门套线有50mm余量。4. 若现场尺寸与图纸不符，立即暂停定制，与设计师重新确认方案。"
+  },
+  {
+   "ku_id": "GZ-SY-00474",
+   "title": "玄关无独立空间导致鞋柜无处安放",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_DESIGN",
+    "TRADE_DEMOLISH"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "无玄关",
+    "薄柜",
+    "地垫",
+    "储藏",
+    "公寓"
+   ],
+   "how_to_avoid": "1. 设计阶段若发现无玄关，优先考虑调整厨房或卧室门洞位置，为入口处腾出鞋柜空间。2. 若无法调整，利用墙面凹位或定制薄柜（250mm深），采用插入式鞋架。3. 考虑使用可移动式鞋柜或换鞋凳，灵活利用空间。4. 与设计师沟通，在平面图上明确鞋柜和衣柜的落位，确保动线合理。"
+  },
+  {
+   "ku_id": "GZ-SY-00476",
+   "title": "入户门居中导致玄关鞋柜无法布置",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_DESIGN",
+    "TRADE_DEMOLISH"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "门居中",
+    "门洞",
+    "拆改",
+    "净宽",
+    "标准柜"
+   ],
+   "how_to_avoid": "1. 设计时若入户门居中且玄关宽度有限，优先考虑将门扇改为靠较长墙一侧开启。2. 与结构工程师确认门洞移位可行性，避免承重墙改动。3. 若无法移门，考虑L式布置，鞋柜靠墙作对景，坐凳在另一侧。4. 在平面图上模拟不同布置方案，确保鞋柜深度≥350mm。"
+  },
+  {
+   "ku_id": "GZ-SY-00478",
+   "title": "玄关鞋柜容量设计不足，按常住人口估算",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_CABINET"
+   ],
+   "material": [
+    "MAT_BOARD"
+   ],
+   "trigger_keywords": [
+    "容量",
+    "鞋柜",
+    "常住人口",
+    "简易鞋架",
+    "玄关"
+   ],
+   "how_to_avoid": "1. 装修前统计全家现有鞋子数量，并预留20%-30%的增量空间。2. 按人均14双鞋（日本调研数据）或中国家庭调研数据估算总储藏量。3. 设计鞋柜时优先考虑整面墙高柜，利用垂直空间。4. 若空间有限，可结合换鞋凳下方、吊柜等做补充收纳。5. 在合同中明确鞋柜内部净尺寸和层板数量。"
+  },
+  {
+   "ku_id": "GZ-SY-00484",
+   "title": "玄关通道宽度不足影响多人同时活动",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_DESIGN"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "通道宽度",
+    "拥挤",
+    "穿鞋",
+    "侧身",
+    "玄关"
+   ],
+   "how_to_avoid": "1. 设计阶段测量玄关实际净宽，确保至少满足一人穿鞋+一人通过的需求（≥1000mm）。2. 若空间有限，可考虑将鞋柜做薄或采用内嵌式设计，释放通道宽度。3. 避免在通道两侧同时设置高柜和换鞋凳，留出足够活动空间。4. 与设计师明确家庭人口和出入习惯，提前规划多人同时使用的场景。"
+  },
+  {
+   "ku_id": "GZ-SY-00485",
+   "title": "玄关未预留无障碍设施导致后期改造难",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_DESIGN",
+    "TRADE_CABINET"
+   ],
+   "material": [
+    "MAT_BOARD"
+   ],
+   "trigger_keywords": [
+    "无障碍",
+    "轮椅",
+    "扶手",
+    "改造",
+    "玄关"
+   ],
+   "how_to_avoid": "1. 设计阶段与家人沟通未来可能的使用需求，尤其是老人或行动不便者。2. 鞋柜底部架空高度建议≥650mm，方便轮椅使用者伸脚。3. 玄关通道净宽至少预留750mm，舒适宽度900mm，若需护理人员协助则≥1100mm。4. 在换鞋区墙面预埋扶手衬板（250mm宽，扶手距墙800±200mm），并预留850mm高台面供撑扶。5. 即使当前无需求，也建议预留后期加装扶手的条件，避免二次施工。"
+  },
+  {
+   "ku_id": "GZ-SY-00495",
+   "title": "老人玄关无坐凳换鞋易跌倒",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_DESIGN"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "坐凳",
+    "换鞋",
+    "跌倒",
+    "老人",
+    "安全"
+   ],
+   "how_to_avoid": "1. 在玄关设计阶段明确要求设置换鞋坐凳，高度以老人膝盖略低为宜（约400-450mm）。2. 坐凳旁预留扶手或墙面支撑点，方便老人起坐借力。3. 若空间有限，可选择折叠式或隐藏式坐凳，但必须保证稳固承重。4. 与设计师沟通时，将坐凳列为玄关必备项，而非可选配置。"
+  },
+  {
+   "ku_id": "GZ-SY-00511",
+   "title": "玄关柜未预留无障碍空间致老人轮椅通行受阻",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_CABINET"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "无障碍",
+    "轮椅",
+    "玄关柜",
+    "架空",
+    "扶手"
+   ],
+   "how_to_avoid": "1. 设计前了解家庭成员构成，如有老人或计划养老，玄关柜底部必须预留≥650mm高度；2. 在柜体侧板或墙面预埋扶手衬板（加固基层）；3. 坐凳高度按老人需求设计（450mm左右），并带扶手；4. 地面采用防滑材料，避免高差；5. 与设计师明确无障碍需求，写入设计任务书。"
+  },
+  {
+   "ku_id": "GZ-SY-00514",
+   "title": "阳台柜未预留洗衣烘干机插座致返工",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_ELECTRICAL",
+    "TRADE_CABINET"
+   ],
+   "material": [
+    "MAT_APPLIANCE"
+   ],
+   "trigger_keywords": [
+    "插座",
+    "洗衣机",
+    "烘干机",
+    "返工",
+    "引线"
+   ],
+   "how_to_avoid": "1. 设计阳台柜前，先确定是否放置洗衣机、烘干机等电器，并记录型号尺寸。2. 在图纸上明确标注插座位置，要求独立回路，避开柜体背板。3. 施工前与电工、设计师三方确认插座高度和位置。4. 柜体内部预留检修口，方便后期维护。"
+  },
+  {
+   "ku_id": "GZ-SY-00537",
+   "title": "阳台家政柜未预留扫地机器人基站位置",
+   "stage": "STAGE_02",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_CABINET",
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "扫地机器人",
+    "基站",
+    "进出水口",
+    "上下水",
+    "线缆"
+   ],
+   "how_to_avoid": "1. 设计前，确认业主是否计划使用扫地机器人，以及型号是否带上下水功能。2. 若带上下水，在水电改造阶段预留进出水口和电源，位置在柜体底部。3. 柜体设计时，预留基站尺寸（长宽高），并留出散热和检修空间。4. 若不确定，至少预留一个电源插座和40cm×40cm的空地。5. 在图纸上标注基站位置，与水电工和柜体厂家交底。"
+  },
+  {
+   "ku_id": "GZ-SY-00002",
+   "title": "报价漏项：水电改造不包在总价内，签约后增项大几千到过万",
+   "stage": "STAGE_03",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_PLUMBING",
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [
+    "MAT_PIPE",
+    "MAT_WIRE"
+   ],
+   "trigger_keywords": [
+    "报价漏项",
+    "增项",
+    "水电改造",
+    "合同纠纷",
+    "维权"
+   ],
+   "how_to_avoid": "1. 签约前：要求报价单包含水电改造预估费用，明确'水电包死'或'水电不超过总价X%'的条款。2. 合同中：约定水电改造的计价方式（按米/按点位），并设定增项上限（如不超过预算10%）。3. 施工中：水电关键节点（开槽、布管、穿线、打压）到现场把关确认，完工后现场测量实际用量，与预估对比，超出部分需书面确认。"
+  },
+  {
+   "ku_id": "GZ-SY-00003",
+   "title": "水电按米实报实销：施工方绕路虚报米数致费用翻倍",
+   "stage": "STAGE_03",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_FRAUD",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_PLUMBING",
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [
+    "MAT_PIPE",
+    "MAT_WIRE"
+   ],
+   "trigger_keywords": [
+    "按米结算",
+    "虚报米数",
+    "水电费用",
+    "取证",
+    "绕路"
+   ],
+   "how_to_avoid": "1. 合同写'水电总价包干'或'单价×预估米数×上下浮动≤10%'。2. 施工中业主在场确认实测米数，逐段核对米数表。3. 写明'非故意绕路'违约责任。4. 验收时打压测试+拍照存档管路走向，作为争议时的证据。"
+  },
+  {
+   "ku_id": "GZ-SY-00004",
+   "title": "低价套餐688/888元每平：主材低配、公摊算钱、增项漏项多",
+   "stage": "STAGE_03",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_FRAUD",
+    "TYPE_COST",
+    "TYPE_OMISSION"
+   ],
+   "trade": [],
+   "material": [],
+   "trigger_keywords": [
+    "低价套餐",
+    "公摊面积",
+    "主材低配",
+    "增项漏项",
+    "拎包入住"
+   ],
+   "how_to_avoid": "1. 签约前必问：实际套内面积多少？主材具体品牌和型号？每平米含哪些分项？2. 要求提供完整报价清单（不是概算），逐项核对含/不含内容。3. 如果不能给明确清单，不要签约。4. 对比报价时统一按套内面积、同品牌型号横向比较。"
+  },
+  {
+   "ku_id": "GZ-SY-00005",
+   "title": "装修合同付款节奏陷阱：首付比例过高风险大，尾款留到验收后",
+   "stage": "STAGE_03",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_FRAUD"
+   ],
+   "trade": [],
+   "material": [],
+   "trigger_keywords": [
+    "付款节奏",
+    "首付比例",
+    "工期拖延",
+    "尾款",
+    "制约"
+   ],
+   "how_to_avoid": "1. 签约前问清付款节点安排，参考区间如下：参考区间（非官方统计，供参考，具体以合同约定为准）：开工前首付30%-40%；水电隐蔽工程完工并验收合格后付30%-35%；泥木完工验收合格后付25%-30%；竣工验收合格后付尾款5%-10%。2. 每笔付款前验收上一阶段工程质量（水电打压、闭水试验、瓦木验收），不合格不付下一期。3. 尾款留到竣工验收合格后支付，不合格坚决不签字。4. 合同中写明工期违约条款：延期一天扣多少钱（通常0.1-0.3%/天）。"
+  },
+  {
+   "ku_id": "GZ-SY-00006",
+   "title": "全屋定制投影报价不含五金灯具，实际总价高出30-50%",
+   "stage": "STAGE_03",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_CABINET"
+   ],
+   "material": [
+    "MAT_BOARD",
+    "MAT_HARDWARE"
+   ],
+   "trigger_keywords": [
+    "投影报价",
+    "五金",
+    "增项",
+    "全屋定制",
+    "总价"
+   ],
+   "how_to_avoid": "1. 别只看投影报价就签合同，必须让商家出详细分项清单（含五金/灯具/配件每项单价）。2. 签约前问清：投影价含不含五金？含不含灯具？附加项有哪些？3. 合同中约定'附加费用不超过投影总价的X%'。4. 对比不同商家时，统一用'含五金配件的总价'横向比较。"
+  },
+  {
+   "ku_id": "GZ-SY-00029",
+   "title": "客厅升级岩板仅材料费增加1.4万，但不含加工费和安装费，实际差价远超预期",
+   "stage": "STAGE_03",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_COMMUNICATION"
+   ],
+   "trade": [
+    "TRADE_TILE"
+   ],
+   "material": [
+    "MAT_TILE"
+   ],
+   "trigger_keywords": [
+    "岩板",
+    "材料费",
+    "加工费",
+    "损耗率",
+    "吊机"
+   ],
+   "how_to_avoid": "1. 升级岩板前要求报价包含'材料+加工+安装+运输+损耗'的全包价，而非只看材料差价。2. 岩板仅在视觉焦点区域使用（客厅主墙、电视背景墙），阳台、厨房等非焦点区域用瓷砖即可。3. 确认岩板尺寸是否能通过电梯/楼梯搬运，超大板需吊机（额外费用3000-5000元）。4. 对比时统一用'落地总价'而非'每片单价'或'材料差价'。"
+  },
+  {
+   "ku_id": "GZ-SY-00031",
+   "title": "全屋定制两家报价差5万，核心差异在背板厚度和封边工艺，不懂就看这两项",
+   "stage": "STAGE_03",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_COMMUNICATION"
+   ],
+   "trade": [
+    "TRADE_CABINET"
+   ],
+   "material": [
+    "MAT_BOARD",
+    "MAT_HARDWARE"
+   ],
+   "trigger_keywords": [
+    "背板厚度",
+    "封边工艺",
+    "报价差异",
+    "铰链",
+    "全屋定制"
+   ],
+   "how_to_avoid": "1. 对比全屋定制报价时，不看总价，逐项拆解：背板厚度（9mm vs 18mm）、封边工艺（EVA vs PU/激光）、五金品牌（百隆 vs 国产）、板材环保等级（E1 vs E0 vs ENF）。2. 让厂家出具'分项对比表'，每一项单独报价，横向比较。3. 重点检查封边质量：用手摸封边接缝，应平滑无缝隙、无胶溢出；闻封边处，应无刺鼻气味。4. 背板要求≥18mm（承重柜体），9mm仅适用于轻量吊柜。"
+  },
+  {
+   "ku_id": "GZ-SY-00037",
+   "title": "瓷砖比价只看单价不看数量损耗，初步核算差距小实际差价超万元",
+   "stage": "STAGE_03",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_COMMUNICATION"
+   ],
+   "trade": [
+    "TRADE_TILE"
+   ],
+   "material": [
+    "MAT_TILE"
+   ],
+   "trigger_keywords": [
+    "损耗率",
+    "比价",
+    "踢脚线",
+    "差价",
+    "瓷砖"
+   ],
+   "how_to_avoid": "1. 比价时要求每个品牌出具'全包落地价'（含瓷砖+损耗+踢脚线+美缝+运输+上楼），不是只比每片单价。2. 确认每个品牌的损耗系数（大厂8%、小厂12-15%），损耗高的品牌实际用量更多。3. 制作标准化的比价表格，逐项填入：数量×单价+损耗量×单价+配件费+运输费=总价。4. 至少两家品牌出具同等口径的报价后再做对比。"
+  },
+  {
+   "ku_id": "GZ-SY-00048",
+   "title": "装修合同首付65%过高，业主失去工期约束力和议价权",
+   "stage": "STAGE_03",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_FRAUD"
+   ],
+   "trade": [],
+   "material": [],
+   "trigger_keywords": [
+    "首付款",
+    "合同付款",
+    "工期约束",
+    "议价权",
+    "尾款"
+   ],
+   "how_to_avoid": "1. 签约前问清付款节点安排，参考区间如下：参考区间（非官方统计，供参考，具体以合同约定为准）：开工前首付30%-40%；水电隐蔽工程完工并验收合格后付30%-35%；泥木完工验收合格后付25%-30%；竣工验收合格后付尾款5%-10%。2. 每笔付款与工程节点挂钩（开工→水电验收→泥木验收→竣工验收），具体比例在合同中写清。3. 合同中写明'每笔付款前需业主书面验收确认上一阶段工程合格'。4. 如装修公司坚持高首付（如65%），可作为其资金链紧张的信号，考虑更换装修公司。5. 主材代购付款应与材料到场验收挂钩，不要提前支付。"
+  },
+  {
+   "ku_id": "GZ-SY-00140",
+   "title": "捣制墙大白墙铺砖漏特殊处理费",
+   "stage": "STAGE_03",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_TILE"
+   ],
+   "material": [
+    "MAT_TILE",
+    "MAT_CEMENT"
+   ],
+   "trigger_keywords": [
+    "大白墙",
+    "铲除",
+    "拉毛",
+    "特殊处理",
+    "铺砖"
+   ],
+   "how_to_avoid": "1. 在报价阶段，明确告知施工方墙面类型（捣制墙、大白墙等），要求其将特殊处理费单独列项。2. 核对报价单中是否包含“基层处理”或“墙面预处理”项目，单价是否合理（约按当期标准单价/㎡）。3. 若报价单未包含，要求补充后再签约。4. 施工前确认墙面状况，避免施工中被动加价。"
+  },
+  {
+   "ku_id": "GZ-SY-00141",
+   "title": "防水面积按实际单独计算易漏",
+   "stage": "STAGE_03",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_WATERPROOF"
+   ],
+   "material": [
+    "MAT_CEMENT"
+   ],
+   "trigger_keywords": [
+    "防水",
+    "卫生间",
+    "漏水",
+    "墙面高度",
+    "维修"
+   ],
+   "how_to_avoid": "1. 要求施工方在报价单中单独列出防水项目，注明“墙面防水”和“地面防水”的单价及计算面积。2. 防水面积应实测实量，墙面防水高度通常为300mm（淋浴区1800mm），要求施工方提供计算依据。3. 施工时监督防水涂刷遍数和高度，拍照留证。4. 验收时做闭水试验，确认无渗漏。"
+  },
+  {
+   "ku_id": "GZ-SY-00147",
+   "title": "背景墙造型按㎡收费导致多算",
+   "stage": "STAGE_03",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_FRAUD"
+   ],
+   "trade": [
+    "TRADE_CARPENTRY"
+   ],
+   "material": [
+    "MAT_BOARD"
+   ],
+   "trigger_keywords": [
+    "背景墙",
+    "展开面积",
+    "多算",
+    "贴面",
+    "尺寸"
+   ],
+   "how_to_avoid": "1. 签约前明确要求设计师在报价单中注明背景墙造型的收费方式，必须写'按项'而非'按㎡'。2. 了解行业标准：石膏板贴面造型限宽4m高2.9m以内，石膏线15m以内，按项收费按当期标准单价/项。3. 若报价单出现'按㎡'，要求设计师解释计算规则，并对比按项价格，拒绝不合理计价。4. 保留报价单作为证据，后期结算时逐项核对。"
+  },
+  {
+   "ku_id": "GZ-SY-00151",
+   "title": "水电预收陷阱：非精装房按预收报价",
+   "stage": "STAGE_03",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_PLUMBING"
+   ],
+   "material": [
+    "MAT_PIPE",
+    "MAT_WIRE"
+   ],
+   "trigger_keywords": [
+    "水电改造",
+    "预收",
+    "按实结算",
+    "毛坯房",
+    "补交"
+   ],
+   "how_to_avoid": "1. 签约前明确询问水电计价方式，要求书面写明是'预收按实结算'还是'一次性包死'。2. 毛坯房、全屋拆改重做、二手房整体翻新等必须坚持包死价，拒绝预收。3. 若对方坚持预收，要求合同注明'最终结算价不得超过预收金额的10%'。4. 核对报价单中水电项目是否标注'预收'字样，若无标注则默认包死。5. 签约前请独立第三方审核报价单，确认计价方式。"
+  },
+  {
+   "ku_id": "GZ-SY-00156",
+   "title": "两户打通预算按一户算",
+   "stage": "STAGE_03",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_DESIGN"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "两户打通",
+    "小户型",
+    "预算",
+    "重复计费",
+    "砌筑"
+   ],
+   "how_to_avoid": "1. 签约前明确告知设计师两户打通需求，要求按一户整体出预算。2. 核对预算中是否还有60墙体砌筑项，打通后此墙应取消。3. 对比两户分别报价与一户报价的总价差异，警惕重复计费。4. 在合同中注明“按一户整体计价，不得重复收取基础工程费”。"
+  },
+  {
+   "ku_id": "GZ-SY-00161",
+   "title": "外阜客户远程运输费漏算",
+   "stage": "STAGE_03",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_DESIGN"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "外阜",
+    "运输费",
+    "远程",
+    "材料运输",
+    "停工"
+   ],
+   "how_to_avoid": "1. 签约前明确施工地点是否外阜，要求报价单单独列出远程运输费。2. 询问装修公司外阜当地是否有分店，若有则管理费按当地标准执行。3. 在合同中写明运输费计算方式及金额，避免口头承诺。4. 对比本地装修公司报价，外阜项目可能更划算。"
+  },
+  {
+   "ku_id": "GZ-SY-00308",
+   "title": "定制柜体下单拖延致工期延误",
+   "stage": "STAGE_03",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_DELAY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_CABINET"
+   ],
+   "material": [
+    "MAT_BOARD"
+   ],
+   "trigger_keywords": [
+    "定制柜",
+    "下单",
+    "工期延误",
+    "窝工",
+    "看管费"
+   ],
+   "how_to_avoid": "1. 在拆改或水电阶段就确定橱柜、衣柜等定制产品的样式和尺寸，并完成下单。2. 与厂家确认生产周期，倒排安装时间，确保与油工完工节点衔接。3. 在施工合同中明确定制产品的下单截止日期和延期责任。4. 若已延误，可考虑加急生产或选择现货替代方案，但需权衡成本。"
+  },
+  {
+   "ku_id": "GZ-SY-00015",
+   "title": "卫生间沉箱位置不能改，移位需重新做防水并抬高地面",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_COMMUNICATION"
+   ],
+   "trade": [
+    "TRADE_PLUMBING",
+    "TRADE_WATERPROOF"
+   ],
+   "material": [
+    "MAT_PIPE"
+   ],
+   "trigger_keywords": [
+    "沉箱",
+    "马桶移位",
+    "地面抬高",
+    "渗漏",
+    "净高"
+   ],
+   "how_to_avoid": "1. 设计方案确定前确认沉箱位置和排水管道走向（可问物业或查看原始图纸）。2. 马桶移位距离控制在30cm以内（可用移位器），超过50cm不建议移位。3. 如必须移位：要求施工方出具详细的管道走向图，接头处做双重防水。4. 移位后必须做48小时闭水试验（比标准更严格）。"
+  },
+  {
+   "ku_id": "GZ-SY-00022",
+   "title": "叠墅共用排污管道改造未统筹上下户，导致系统堵塞或倒灌",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_COMMUNICATION",
+    "TYPE_QUALITY"
+   ],
+   "trade": [
+    "TRADE_PLUMBING"
+   ],
+   "material": [
+    "MAT_PIPE"
+   ],
+   "trigger_keywords": [
+    "排污管道",
+    "堵塞",
+    "倒灌",
+    "交叉重叠",
+    "油脂"
+   ],
+   "how_to_avoid": "1. 叠墅/复式改造前，必须与上下户业主沟通排水改造方案，确认共用管道的走向、管径和接入点。2. 建议请专业水电设计师统一出管道布局图，上下户共用一张图纸施工。3. 厨房排水与卫生间排污分管道，不要接入同一主管。4. 实行'谁先完工谁等待'原则——等两户都准备好后统一停水、统一施工，避免先后施工导致的管道冲突。"
+  },
+  {
+   "ku_id": "GZ-SY-00023",
+   "title": "更换共用供水管道需全楼停水，未提前协调物业和邻居导致工期延误",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_DELAY",
+    "TYPE_COMMUNICATION"
+   ],
+   "trade": [
+    "TRADE_PLUMBING"
+   ],
+   "material": [
+    "MAT_PIPE"
+   ],
+   "trigger_keywords": [
+    "供水管道",
+    "停水",
+    "物业协调",
+    "阀门",
+    "工期延误"
+   ],
+   "how_to_avoid": "1. 施工前至少3天向物业提交书面停水申请，说明停水范围、时间、恢复计划。2. 提前24小时通知受影响的所有邻居（书面通知+微信群通知）。3. 选择用水低峰时段停水（如上午9-11点），控制在4小时内恢复。4. 提前检查主阀门是否能正常开关，如发现阀门老化，让物业提前更换阀门再施工。5. 备好临时供水方案（储水桶），减少邻居不便。"
+  },
+  {
+   "ku_id": "GZ-SY-00024",
+   "title": "先装窗后做防水会打孔破坏防水层，施工顺序必须反过来",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_WATERPROOF",
+    "TRADE_DOOR"
+   ],
+   "material": [
+    "MAT_CEMENT",
+    "MAT_GLUE"
+   ],
+   "trigger_keywords": [
+    "防水层",
+    "打孔",
+    "渗水",
+    "发霉",
+    "施工顺序"
+   ],
+   "how_to_avoid": "1. 施工方案中明确写死顺序：防水→装窗→打胶密封，不允许颠倒。2. 窗框周围防水做两遍：第一遍在墙体上（窗洞四周延伸150mm），第二遍在窗框安装后打密封胶。3. 防水完工后做淋水试验（用水管对窗框周围持续淋水30分钟），检查室内侧有无渗漏。4. 如果施工方坚持先装窗，要求书面承诺'如因施工顺序导致渗漏，由施工方全责修复'。"
+  },
+  {
+   "ku_id": "GZ-SY-00052",
+   "title": "一楼/地下空间排水必须装污水提升泵，否则重力排水会倒灌",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_QUALITY"
+   ],
+   "trade": [
+    "TRADE_PLUMBING"
+   ],
+   "material": [
+    "MAT_PIPE"
+   ],
+   "trigger_keywords": [
+    "污水提升泵",
+    "倒灌",
+    "一楼",
+    "排水",
+    "地下室"
+   ],
+   "how_to_avoid": "1. 设计阶段：确认楼下所有排水点位(卫生间/除湿机/洗衣机)的排水方案，明确是否需要污水提升泵。2. 设备选型：选择扬程>=5m、流量>=6m3/h的污水提升泵，品牌推荐格兰富/威乐。3. 安装要求：泵体低于所有排水点，排水管设止回阀防止回流。4. 预留应急方案：停电时泵无法工作，需有备用排水措施。"
+  },
+  {
+   "ku_id": "GZ-SY-00054",
+   "title": "楼板开挖必须重做地热，不能局部修补",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_PLUMBING",
+    "TRADE_DEMOLISH"
+   ],
+   "material": [
+    "MAT_PIPE"
+   ],
+   "trigger_keywords": [
+    "地热",
+    "楼板开挖",
+    "供暖不均",
+    "回路失效",
+    "返工"
+   ],
+   "how_to_avoid": "1. 设计阶段：明确楼梯开口/设备移位是否涉及地热管道，开工前获取地热盘管走向图(向开发商/物业索要)。2. 施工方案：如需开挖，将该回路覆盖的全部区域设为独立控制区域，重新铺设盘管。3. 打压测试：重做后必须打压测试(0.6MPa保压30分钟)，确保无渗漏后再回填。4. 费用预估：开挖区域地热重做费用按原面积x1.5-2倍计算，签约前明确此费用。"
+  },
+  {
+   "ku_id": "GZ-SY-00057",
+   "title": "煤气城市安装壁挂炉必须购买燃气公司指定设备并办理开栓",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COMPLIANCE"
+   ],
+   "trade": [
+    "TRADE_PLUMBING",
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [
+    "MAT_APPLIANCE"
+   ],
+   "trigger_keywords": [
+    "壁挂炉",
+    "开栓",
+    "燃气公司",
+    "指定型号",
+    "煤气"
+   ],
+   "how_to_avoid": "1. 装修前向当地燃气公司确认：该区域使用煤气还是天然气，是否指定设备品牌/型号。2. 如需安装壁挂炉，先咨询燃气公司指定供应商，获取设备型号和价格。3. 办理开栓手续需提前准备：燃气表读数、管道验收合格证、设备合格证。4. 将壁挂炉费用(含指定设备溢价)纳入装修预算，避免后期发现超支。"
+  },
+  {
+   "ku_id": "GZ-SY-00069",
+   "title": "照明电路设计不合理导致安全隐患",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [
+    "MAT_WIRE"
+   ],
+   "trigger_keywords": [
+    "回路",
+    "1.5平方",
+    "跳闸",
+    "焦味",
+    "2.5平方"
+   ],
+   "how_to_avoid": "1. 设计阶段要求照明回路与插座回路分开设置，每个房间至少一个独立照明回路。2. 照明回路电线不低于1.5平方毫米，但建议使用2.5平方毫米以留余量；插座回路必须2.5平方毫米以上。3. 所有照明回路必须加装漏电保护开关，并设置过载保护。4. 施工时监督电工按图施工，禁止私自并线；验收时测试每个回路的负载能力。5. 若使用智能照明系统，需单独回路并预留零线。"
+  },
+  {
+   "ku_id": "GZ-SY-00136",
+   "title": "满铺壁纸时棚面乳胶漆未单独立项",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_PAINT",
+    "TRADE_DESIGN"
+   ],
+   "material": [
+    "MAT_PAINT"
+   ],
+   "trigger_keywords": [
+    "壁纸",
+    "棚面",
+    "乳胶漆",
+    "单独立项",
+    "面积"
+   ],
+   "how_to_avoid": "1. 在报价单中明确区分墙面乳胶漆和棚面乳胶漆，墙面满铺壁纸时，墙面乳胶漆项目应删除或注明不施工。2. 棚面乳胶漆必须单独立项，单独计算面积和费用，不能混在墙面乳胶漆里。3. 在合同中写明：墙面贴壁纸区域，墙面乳胶漆项目取消，棚面乳胶漆按实际面积单独计价。4. 施工交底时，与油工确认涂刷范围，明确棚面是唯一需要刷乳胶漆的位置。5. 结算时，核对报价单项目与实际施工内容，未施工项目应扣除费用。"
+  },
+  {
+   "ku_id": "GZ-SY-00158",
+   "title": "业主自铲大白二次铲除费用高",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_QUALITY"
+   ],
+   "trade": [
+    "TRADE_PAINT"
+   ],
+   "material": [
+    "MAT_PAINT"
+   ],
+   "trigger_keywords": [
+    "铲大白",
+    "腻子层",
+    "二次铲除",
+    "油工",
+    "自费"
+   ],
+   "how_to_avoid": "1. 签约前明确原始大白铲除由谁负责，写入合同。2. 若业主坚持自铲，要求施工方先验收铲除质量，合格后再进行下一步。3. 建议将铲除工作包含在施工报价中，由专业工人一次性完成。4. 自铲时需铲至水泥砂浆层，露出坚实基层，可用铲刀测试是否起粉。"
+  },
+  {
+   "ku_id": "GZ-SY-00176",
+   "title": "开槽前未探测预埋管线切断线路",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_DEMOLISH",
+    "TRADE_PLUMBING"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "预埋管线",
+    "开槽",
+    "跳闸",
+    "老房翻新",
+    "重新布线"
+   ],
+   "how_to_avoid": "1. 开槽前强制要求施工方使用墙体探测仪对开槽区域进行扫描，标记所有预埋管线位置。2. 老房改造前，调取原始水电图纸（若有），或请专业检测机构进行管线探测。3. 在施工交底中明确：未探测就开槽导致的管线损坏，由施工方承担全部修复费用。4. 巡检时确认工人是否携带并使用探测仪，未使用可要求停工。"
+  },
+  {
+   "ku_id": "GZ-SY-00178",
+   "title": "地暖拆除未标记管路走向致漏水",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_DEMOLISH",
+    "TRADE_PLUMBING"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "地暖管",
+    "漏水",
+    "打压测试",
+    "管路走向",
+    "拆除"
+   ],
+   "how_to_avoid": "1. 拆除前，向物业或原业主获取地暖管路图纸，明确管路走向和分集水器位置。2. 若无图纸，使用红外热成像仪或地暖探测仪扫描地面，标记管路位置。3. 在标记区域采用人工小心剔凿，避免使用大型电镐。4. 拆除完成后，立即进行地暖打压测试，确认无漏水后再进行下一步施工。"
+  },
+  {
+   "ku_id": "GZ-SY-00179",
+   "title": "拆除废料集中堆放致楼板超载",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_DEMOLISH"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "废料堆放",
+    "楼板超载",
+    "裂缝",
+    "加固",
+    "垃圾清运"
+   ],
+   "how_to_avoid": "1. 在施工交底中明确：拆除废料必须及时清运，不得在楼板上集中堆放。2. 要求施工方将废料分散堆放，或使用编织袋装好后码放在承重墙附近。3. 每日施工结束后检查现场，发现废料堆积超过1平方米且高度超过0.5米，立即要求清运。4. 若楼板已出现裂缝，立即停工并通知物业和结构工程师评估。"
+  },
+  {
+   "ku_id": "GZ-SY-00195",
+   "title": "墙排下水管高度预留错误",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_PLUMBING"
+   ],
+   "material": [
+    "MAT_PIPE"
+   ],
+   "trigger_keywords": [
+    "墙排",
+    "下水管",
+    "高度预留",
+    "排水口错位",
+    "积水"
+   ],
+   "how_to_avoid": "1. 设计阶段明确墙排管中心距完成面高度，写入施工交底单。2. 水电改造时现场测量并拍照留底，确认高度在400-450mm区间。3. 预埋后使用临时堵头封堵管口，防止杂物进入。4. 瓦工贴砖前复核管口位置，避免贴砖后偏差。"
+  },
+  {
+   "ku_id": "GZ-SY-00201",
+   "title": "嵌入式浴缸未留检修口",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_BATHROOM"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "嵌入式浴缸",
+    "检修口",
+    "排水堵塞",
+    "封死",
+    "砸砖"
+   ],
+   "how_to_avoid": "1. 设计阶段在浴缸排水阀一侧预留检修口位置。2. 施工时使用可拆卸面板，不用瓷砖封死。3. 检修口尺寸不小于300mm×300mm，确保手能伸入操作。4. 浴缸底部做防水并留坡度朝排水口。"
+  },
+  {
+   "ku_id": "GZ-SY-00208",
+   "title": "电视墙50管预埋验收：管径、弯头角度与穿线通畅性确认",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_ELECTRICAL",
+    "TRADE_CARPENTRY",
+    "TRADE_DESIGN"
+   ],
+   "material": [
+    "MAT_PIPE"
+   ],
+   "trigger_keywords": [
+    "50管",
+    "线路外露",
+    "电视墙",
+    "预埋",
+    "开槽"
+   ],
+   "how_to_avoid": "1. 水电验收时重点检查：管径≥50mm、两端45度弯头+喇叭口、管内已穿牵引铁丝。2. 用铁丝试穿确认管道通畅（无水泥堵管），拍照标注管口位置。3. 电视墙方案必须在水电交底前终确认（含电视尺寸、挂装高度、插座位置），避免后期变更。4. 若为老房翻新，检查原有线管是否老化/堵塞，必要时全部更换。5. 合同中注明：因设计变更导致的线管改位费用归属。"
+  },
+  {
+   "ku_id": "GZ-SY-00214",
+   "title": "墙面空鼓不剔除直接刮腻子后脱落",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_PAINT"
+   ],
+   "material": [
+    "MAT_PAINT"
+   ],
+   "trigger_keywords": [
+    "空鼓检测",
+    "抹灰层",
+    "脱落",
+    "铲除",
+    "卧室"
+   ],
+   "how_to_avoid": "1. 刮腻子前用空鼓锤逐面墙敲击，听到空响声即标记空鼓范围。2. 空鼓面积超过200mm×200mm的必须剔除至砖墙/混凝土基层，清理浮灰。3. 重新抹灰前浇水湿润基层，涂刷界面剂增强粘结。4. 抹灰分两遍：底层粗抹约10mm，面层精抹约5mm，确保压实。5. 抹灰后养护不少于7天，每天洒水防止干缩裂缝。6. 养护完成后再进行界面剂、腻子等后续工序。"
+  },
+  {
+   "ku_id": "GZ-SY-00216",
+   "title": "墙面找平石膏用量不足导致平整度差",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_PAINT"
+   ],
+   "material": [
+    "MAT_PAINT"
+   ],
+   "trigger_keywords": [
+    "找平石膏",
+    "平整度",
+    "衣柜缝隙",
+    "泡沫胶",
+    "返工"
+   ],
+   "how_to_avoid": "1. 在报价单中明确要求墙面找平工艺标准，注明石膏用量参考（100平米约80袋）。2. 施工前与施工方确认找平方案，要求对凹凸超过5mm的部位先做石膏找平。3. 施工中检查石膏材料进场数量，与报价单对比是否合理。4. 验收时用2米靠尺检查墙面平整度，重点检查踢脚线、门口、柜体安装区域，确保缝隙小于3mm。5. 如发现石膏用量明显不足，立即要求停工整改。"
+  },
+  {
+   "ku_id": "GZ-SY-00273",
+   "title": "设计图纸与现场尺寸不符，返工费时费钱",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COMMUNICATION"
+   ],
+   "trade": [
+    "TRADE_DESIGN"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "设计图纸",
+    "尺寸不符",
+    "返工",
+    "放线",
+    "抹灰层"
+   ],
+   "how_to_avoid": "1. 开工前由设计师或工长用激光测距仪对全屋进行精确复尺，记录每个房间的长宽高、梁柱位置、门窗洞口尺寸。2. 将复尺数据与设计图纸逐一比对，偏差超过1厘米时，及时调整设计方案。3. 调整后的图纸需经业主确认签字，作为施工依据。4. 在放线交底时，再次核对关键尺寸（如家具摆放区、定制柜体位置），确保无误。"
+  },
+  {
+   "ku_id": "GZ-SY-00274",
+   "title": "原墙空鼓渗水未处理，后期开裂发霉",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_PAINT",
+    "TRADE_WATERPROOF"
+   ],
+   "material": [
+    "MAT_CEMENT",
+    "MAT_PAINT"
+   ],
+   "trigger_keywords": [
+    "空鼓",
+    "渗水",
+    "发霉",
+    "防水层",
+    "墙面开裂"
+   ],
+   "how_to_avoid": "1. 开工前用空鼓锤逐一敲击所有墙面和地面，标记空鼓区域。2. 检查墙面有无裂缝、渗水痕迹，特别是卫生间、阳台、外墙内侧等易渗水部位。3. 对空鼓区域铲除至基层，重新抹灰找平。4. 对渗水部位先找到水源并处理，再做防水层。5. 将检查结果和处理方案写入施工计划，经业主确认后再开工。"
+  },
+  {
+   "ku_id": "GZ-SY-00277",
+   "title": "热水器类型未定，水电预留全错",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_PLUMBING",
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [
+    "MAT_PIPE",
+    "MAT_WIRE"
+   ],
+   "trigger_keywords": [
+    "热水器",
+    "水电预留",
+    "大功率电源",
+    "承重墙",
+    "返工"
+   ],
+   "how_to_avoid": "1. 开工前确定热水器类型（燃气/电热/空气能），并确认具体品牌型号。2. 将热水器型号参数（功率、尺寸、安装要求）提供给设计师和水电工。3. 水电交底时，明确热水器位置、水管接口、电源插座、排烟孔等预留要求。4. 若未确定，至少预留两种方案的水电接口，避免后期返工。5. 将热水器安装要求写入施工交底单，各方签字确认。"
+  },
+  {
+   "ku_id": "GZ-SY-00278",
+   "title": "中央空调未在水电前定方案，吊顶与布线冲突",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COMMUNICATION"
+   ],
+   "trade": [
+    "TRADE_ELECTRICAL",
+    "TRADE_CARPENTRY"
+   ],
+   "material": [
+    "MAT_WIRE",
+    "MAT_BOARD"
+   ],
+   "trigger_keywords": [
+    "中央空调",
+    "吊顶高度",
+    "布线冲突",
+    "室内机厚度",
+    "拆吊顶"
+   ],
+   "how_to_avoid": "1. 开工前确定是否安装中央空调、新风系统，并选定品牌。2. 联系空调/新风厂家上门勘测，出具安装方案和管道走向图。3. 将方案提供给设计师，配合吊顶设计和电源预留。4. 水电交底时，邀请空调/新风安装师傅到场，确认电源、控制线、管道位置。5. 将空调/新风安装要求写入施工计划，确保水电、木工工序衔接。"
+  },
+  {
+   "ku_id": "GZ-SY-00279",
+   "title": "地暖未定就施工，地面高度影响全屋门洞",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_PLUMBING",
+    "TRADE_TILE"
+   ],
+   "material": [
+    "MAT_PIPE",
+    "MAT_CEMENT"
+   ],
+   "trigger_keywords": [
+    "地暖",
+    "地面找平",
+    "门洞高度",
+    "回填",
+    "凿地面"
+   ],
+   "how_to_avoid": "1. 开工前确定供暖方式（地暖/暖气片），并确认具体方案。2. 若装地暖，计算地面抬高量（含保温层、地暖管、回填层），告知设计师调整门洞高度和家具尺寸。3. 地面施工前，完成地暖管道铺设和打压测试。4. 瓦工找平时，根据地暖完成面标高控制厚度。5. 定制门时，预留地暖抬高量，确保门洞净高足够。"
+  },
+  {
+   "ku_id": "GZ-SY-00280",
+   "title": "全屋智能未定品牌，布线错乱后期难改",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [
+    "MAT_WIRE"
+   ],
+   "trigger_keywords": [
+    "全屋智能",
+    "零线",
+    "智能开关",
+    "窗帘盒",
+    "重新布线"
+   ],
+   "how_to_avoid": "1. 开工前确定是否安装全屋智能，并选定品牌和具体产品清单。2. 联系智能家居服务商出具布线方案，明确零线、网线、电源预留要求。3. 将方案提供给设计师和水电工，确保开关底盒、窗帘盒等位置正确。4. 水电交底时，邀请智能服务商到场确认所有点位。5. 将智能布线要求写入施工合同，作为验收标准。"
+  },
+  {
+   "ku_id": "GZ-SY-00282",
+   "title": "大型电器未定型号，插座位置全错",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [
+    "MAT_WIRE"
+   ],
+   "trigger_keywords": [
+    "冰箱型号",
+    "插座位置",
+    "对开门",
+    "橱柜定制",
+    "贴墙"
+   ],
+   "how_to_avoid": "1. 开工前确定所有大型电器的品牌和型号，记录尺寸、功率、安装要求。2. 将电器参数表提供给设计师和水电工，作为点位预留依据。3. 放线时，按实际电器尺寸模拟摆放，确认插座、进出水口位置。4. 对于嵌入式电器（洗碗机、烤箱），确认橱柜尺寸和散热要求。5. 将电器型号和安装要求写入交底单，各方签字确认。"
+  },
+  {
+   "ku_id": "GZ-SY-00283",
+   "title": "卫生间洁具坑距未确认，安装时才发现不匹配",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_PLUMBING",
+    "TRADE_BATHROOM"
+   ],
+   "material": [
+    "MAT_PIPE"
+   ],
+   "trigger_keywords": [
+    "马桶坑距",
+    "移位器",
+    "排水不畅",
+    "洁具安装",
+    "堵塞"
+   ],
+   "how_to_avoid": "1. 开工前测量卫生间排污口中心到墙面的实际距离，确定坑距。2. 确认马桶型号，核对坑距是否匹配。3. 确认花洒类型（明装/暗装），暗装需提前预埋阀体。4. 确认浴室柜排水方式（墙排/地排），墙排需在水电时预留墙排管。5. 将洁具型号和安装要求提供给水电工，放线时现场确认。"
+  },
+  {
+   "ku_id": "GZ-SY-00284",
+   "title": "全屋定制未初测，水电定位图缺失",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COMMUNICATION"
+   ],
+   "trade": [
+    "TRADE_CABINET",
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [
+    "MAT_BOARD"
+   ],
+   "trigger_keywords": [
+    "橱柜初测",
+    "插座位置",
+    "灶台",
+    "净水器",
+    "水电定位"
+   ],
+   "how_to_avoid": "1. 开工前联系全屋定制品牌，预约初测时间。2. 初测时，设计师到场测量尺寸，了解业主需求（电器、收纳、灯带等）。3. 定制设计师出具水电定位图，标注插座、电源、进出水口位置。4. 将水电定位图提供给水电工，作为施工依据。5. 放线交底时，邀请定制设计师到场，确认所有点位。"
+  },
+  {
+   "ku_id": "GZ-SY-00285",
+   "title": "安全交底缺失，施工违规被罚还出事故",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_COMMUNICATION",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_DEMOLISH"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "安全交底",
+    "噪音投诉",
+    "拆墙",
+    "电线打断",
+    "停电"
+   ],
+   "how_to_avoid": "1. 工人进场第一天，由工长组织安全交底会，业主可参与。2. 明确告知物业施工规定：噪音施工时间、电梯使用规范、垃圾清运方式。3. 强调安全操作规程：拆墙前检查水电线路、佩戴安全帽、禁止吸烟等。4. 将安全交底内容书面化，工人签字确认。5. 工长定期巡查，发现违规立即纠正，必要时处罚。"
+  },
+  {
+   "ku_id": "GZ-SY-00287",
+   "title": "开槽后改方案需重开槽返工",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_DEMOLISH",
+    "TRADE_PLUMBING"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "开槽",
+    "插座移位",
+    "返工费",
+    "垃圾清运",
+    "改方案"
+   ],
+   "how_to_avoid": "1. 在力工进场前，组织设计师、工长、业主三方进行最终方案确认会，逐项核对所有水电点位，签字确认。2. 明确告知业主开槽后方案变更的代价，并在合同中写明变更需另计费用。3. 建议业主在开槽前用手机录制全屋视频，标注所有点位位置，反复确认无遗漏。4. 若业主仍有犹豫，可推迟开槽1-2天，给其充分决策时间，切勿催促。"
+  },
+  {
+   "ku_id": "GZ-SY-00290",
+   "title": "中央空调未协调进场导致返工",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_DELAY",
+    "TYPE_COMMUNICATION"
+   ],
+   "trade": [
+    "TRADE_PLUMBING",
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [
+    "MAT_APPLIANCE"
+   ],
+   "trigger_keywords": [
+    "中央空调",
+    "管道",
+    "吊顶",
+    "水电布线",
+    "协调进场"
+   ],
+   "how_to_avoid": "1. 在水电开工前1周，就联系中央空调厂家预约进场时间。2. 要求空调厂家与水电工、设计师三方现场交底，确认管道走向和点位。3. 在水电施工期间，安排空调内机和管道安装同步进行。4. 若空调厂家无法按时进场，应调整水电施工顺序，先做其他区域，避免冲突。"
+  },
+  {
+   "ku_id": "GZ-SY-00291",
+   "title": "卫浴洁具未确认导致预埋错误",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_PLUMBING",
+    "TRADE_BATHROOM"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "马桶类型",
+    "墙排",
+    "地排",
+    "防水",
+    "预埋"
+   ],
+   "how_to_avoid": "1. 在水电交底前，就确定所有卫浴洁具的型号和安装方式。2. 将洁具的安装图纸提供给水电工，标注预埋位置和尺寸。3. 若尚未确定，可先按通用方式预留，但需在合同中注明后期变更的代价。4. 建议业主在选购洁具时，咨询商家是否提供预埋指导服务。"
+  },
+  {
+   "ku_id": "GZ-SY-00297",
+   "title": "未预留地面完成面高度致门尺寸错误",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_DOOR",
+    "TRADE_TILE"
+   ],
+   "material": [
+    "MAT_TILE"
+   ],
+   "trigger_keywords": [
+    "门洞尺寸",
+    "地面完成面",
+    "门槛石",
+    "门扇",
+    "刮擦地面"
+   ],
+   "how_to_avoid": "1. 瓦工进场前，确定地砖厚度、找平层厚度、是否铺地暖，计算地面完成面高度。2. 将完成面高度书面告知门厂家，作为下单依据。3. 若门已下单，瓦工铺贴前与厂家确认是否需要调整尺寸。4. 门洞高度测量时，预留地面抬高量（至少5cm）。5. 在施工交底中明确标注完成面高度，避免口头沟通遗漏。"
+  },
+  {
+   "ku_id": "GZ-SY-00302",
+   "title": "地面找平后未复测致地板定制返工",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_DELAY"
+   ],
+   "trade": [
+    "TRADE_TILE",
+    "TRADE_FLOOR",
+    "TRADE_CABINET"
+   ],
+   "material": [
+    "MAT_CEMENT"
+   ],
+   "trigger_keywords": [
+    "找平层",
+    "复测",
+    "地板",
+    "高低差",
+    "定制柜"
+   ],
+   "how_to_avoid": "1. 在施工进度表中明确标注地面找平完成日期，提前3天通知地板和定制家具厂家预约复测。2. 复测时要求厂家测量地面绝对标高和相对高差，并出具书面确认单。3. 复测数据需经业主、施工方、厂家三方签字确认，作为后续生产和安装依据。4. 在合同中约定，因未复测导致的尺寸偏差责任由责任方承担。"
+  },
+  {
+   "ku_id": "GZ-SY-00303",
+   "title": "木工吊顶前未确认电器尺寸致返工",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COMMUNICATION"
+   ],
+   "trade": [
+    "TRADE_CARPENTRY",
+    "TRADE_BATHROOM",
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [
+    "MAT_BOARD",
+    "MAT_APPLIANCE"
+   ],
+   "trigger_keywords": [
+    "吊顶",
+    "检修口",
+    "热水器",
+    "石膏板",
+    "开裂"
+   ],
+   "how_to_avoid": "1. 木工进场前，业主需确定厨卫吊顶内所有电器的品牌型号，并将尺寸图纸提供给木工。2. 若无法确定型号，至少确认安装方式（如壁挂、嵌入）和大致尺寸范围，预留可调节余量。3. 吊顶封板前，业主或设计师到现场核对检修口位置、尺寸与水电点位是否匹配。4. 重型电器（如空气能热水器）需提前确认承重方案，由木工预埋加固件。"
+  },
+  {
+   "ku_id": "GZ-SY-00305",
+   "title": "重型灯具未预埋加固件致安装隐患",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_QUALITY"
+   ],
+   "trade": [
+    "TRADE_CARPENTRY",
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [
+    "MAT_HARDWARE"
+   ],
+   "trigger_keywords": [
+    "水晶吊灯",
+    "加固件",
+    "石膏板",
+    "脱落",
+    "吊顶"
+   ],
+   "how_to_avoid": "1. 木工吊顶交底时，业主需提供所有灯具的型号、重量和安装位置清单。2. 超过5kg的灯具，要求木工在对应位置预埋加固件（如多层板、钢结构），并拍照留证。3. 安装灯具时，提醒安装师傅确认加固件位置，避免打偏。4. 若灯具重量超过20kg，建议采用独立吊杆直接连接楼板，而非仅依赖吊顶。"
+  },
+  {
+   "ku_id": "GZ-SY-00306",
+   "title": "油工打磨后先装门柜再刷漆",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_PAINT",
+    "TRADE_DOOR",
+    "TRADE_CABINET"
+   ],
+   "material": [
+    "MAT_PAINT",
+    "MAT_BOARD"
+   ],
+   "trigger_keywords": [
+    "乳胶漆",
+    "划痕",
+    "补漆",
+    "色差",
+    "安装顺序"
+   ],
+   "how_to_avoid": "1. 在油工打磨完成、验收墙面平整度合格后，立即安排木门和定制柜体安装。2. 安装过程中用保护膜或石膏板遮挡已打磨好的墙面，尤其是门洞、柜体周边。3. 安装完成后，再由油工进行最后一遍面漆涂刷，覆盖安装过程造成的微小瑕疵。4. 与施工方在交底时明确此顺序，写入施工进度表，避免口头约定被遗忘。"
+  },
+  {
+   "ku_id": "GZ-SY-00313",
+   "title": "设计变更未书面确认费用扯皮",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_COMMUNICATION"
+   ],
+   "trade": [
+    "TRADE_DESIGN"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "设计变更",
+    "口头确认",
+    "费用扯皮",
+    "造型",
+    "停工"
+   ],
+   "how_to_avoid": "1. 开工前与施工方明确：任何设计变更必须书面确认，包括变更内容、费用增减、工期影响。2. 业主提出变更时，要求施工方先出书面报价和工期影响说明，确认后再施工。3. 施工方也应主动将口头变更记录成文，请业主签字确认。4. 在合同中约定变更流程和审批权限，避免口头承诺。5. 保留所有书面变更单，作为结算依据。"
+  },
+  {
+   "ku_id": "GZ-SY-00316",
+   "title": "油工完工后开槽破坏成品",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_PAINT",
+    "TRADE_PLUMBING"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "开槽",
+    "色差",
+    "成品保护",
+    "插座",
+    "补漆"
+   ],
+   "how_to_avoid": "1. 施工前由工长统一规划所有水电点位，确保油工进场前全部完成开槽布线。2. 若确需后期变更，必须先与工长沟通，评估破坏范围，再决定是否施工。3. 油工完工后，在墙面张贴“禁止开槽”警示标识。4. 工长在交叉施工时做好工序交接，明确各工种作业区域和时间。5. 业主变更需求尽量在油工前提出，避免破坏成品。"
+  },
+  {
+   "ku_id": "GZ-SY-00354",
+   "title": "阳台打通后防水层缺失致渗漏邻里纠纷",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_WATERPROOF"
+   ],
+   "material": [
+    "MAT_CEMENT"
+   ],
+   "trigger_keywords": [
+    "防水层",
+    "渗漏",
+    "闭水试验",
+    "地漏",
+    "邻里纠纷"
+   ],
+   "how_to_avoid": "1. 阳台打通后，无论是否封闭，原阳台区域必须重做防水层（涂料或卷材）。2. 防水层上翻墙面至少300mm，若涉及洗衣机，上翻高度不低于1200mm。3. 施工完成后必须做48小时闭水试验，确认无渗漏方可铺砖。4. 地漏、管根等节点需用堵漏王加强处理。5. 保留防水施工的影像资料和闭水试验记录，作为售后凭证。"
+  },
+  {
+   "ku_id": "GZ-SY-00355",
+   "title": "阳台地漏封堵致排水不畅返水泡地板",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_QUALITY"
+   ],
+   "trade": [
+    "TRADE_PLUMBING"
+   ],
+   "material": [
+    "MAT_PIPE"
+   ],
+   "trigger_keywords": [
+    "地漏封堵",
+    "返水",
+    "冷凝水",
+    "地板起拱",
+    "发霉"
+   ],
+   "how_to_avoid": "1. 阳台地漏严禁封堵，若位置影响布局，可移位但必须保留排水功能。2. 移位时需保证排水坡度（≥1%），且管路连接牢固。3. 若洗衣机放阳台，需单独设置洗衣机专用地漏（防溢水）。4. 空调冷凝水管应接入地漏或专用排水管，不得直接排向地面。5. 施工前在图纸上明确标注地漏位置，验收时逐一检查排水通畅性。"
+  },
+  {
+   "ku_id": "GZ-SY-00434",
+   "title": "衣柜转角空间设计不当形成黑空间",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_CABINET"
+   ],
+   "material": [
+    "MAT_BOARD"
+   ],
+   "trigger_keywords": [
+    "转角",
+    "层板柜",
+    "黑空间",
+    "旋转衣架",
+    "够不到"
+   ],
+   "how_to_avoid": "1. 设计转角柜时优先考虑转角联动门、旋转衣架或拉篮，确保深处物品可拉出。2. 若预算有限，可将转角位置让给管道井或做开放挂衣区，避免封闭柜体。3. 在图纸上标注转角柜内部配件，并现场确认五金件质量。4. 安装后立即测试转角柜的取用便利性，模拟放取大件物品。"
+  },
+  {
+   "ku_id": "GZ-SY-00442",
+   "title": "衣柜内部潮湿发霉未做防潮处理",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_CABINET"
+   ],
+   "material": [
+    "MAT_BOARD"
+   ],
+   "trigger_keywords": [
+    "防潮",
+    "霉斑",
+    "背板",
+    "含水率",
+    "卫生间"
+   ],
+   "how_to_avoid": "1. 南方地区设计衣柜时，要求背板与墙面留3-5cm空隙，并加装防潮垫。2. 柜体侧板或背板预留透气孔（直径≥50mm），或安装通风百叶。3. 衣柜内配置智能除湿机或除湿盒，定期更换。4. 选择防潮性能好的板材，如多层实木或防潮颗粒板，避免普通颗粒板。5. 衣柜位置远离卫生间、厨房等潮湿源，若无法避免，需加强防水处理。6. 在合同中注明防潮设计和材料要求，验收时检查透气孔和背板空隙。"
+  },
+  {
+   "ku_id": "GZ-SY-00493",
+   "title": "入墙鞋柜未预留洞口导致无法安装",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_CABINET",
+    "TRADE_DEMOLISH"
+   ],
+   "material": [
+    "MAT_BOARD"
+   ],
+   "trigger_keywords": [
+    "承重墙",
+    "入墙",
+    "开洞",
+    "外置",
+    "玄关"
+   ],
+   "how_to_avoid": "1. 设计阶段确定是否采用入墙式鞋柜，并确认墙体是否为非承重墙；2. 在拆改阶段提前完成墙体留洞，洞口尺寸按鞋柜设计预留；3. 与设计师、施工方确认洞口位置和尺寸，避免后期变更；4. 若已错过留洞时机，考虑半入墙或外置方案，避免强行开凿承重墙。"
+  },
+  {
+   "ku_id": "GZ-SY-00525",
+   "title": "电动晾衣架未预留电源线致安装返工",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "电动晾衣架",
+    "电源线",
+    "吊顶",
+    "开槽",
+    "阳台"
+   ],
+   "how_to_avoid": "1. 水电改造阶段，确定晾衣架安装位置，并预留电源线。2. 电源线预留长度至少1米，方便接线。3. 在吊顶施工前，确认电源线已到位并通电测试。4. 若已吊顶，可考虑使用带电池的晾衣架，但需确认承重和续航。"
+  },
+  {
+   "ku_id": "GZ-SY-00533",
+   "title": "阳台家政区未预留电器插座",
+   "stage": "STAGE_04",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "插座",
+    "家政柜",
+    "充电",
+    "接线板",
+    "开槽"
+   ],
+   "how_to_avoid": "1. 在设计阶段明确阳台家政区的所有电器设备清单，包括吸尘器、扫地机器人、热水器、地暖控制面板等。2. 在施工交底时，与水电工逐一确认每个电器的插座位置和高度，并标注在墙面。3. 在柜体内部预留至少2个五孔插座，且远离水源。4. 验收时逐一测试每个插座通电情况，并拍照留档。"
+  },
+  {
+   "ku_id": "GZ-SY-00018",
+   "title": "杂牌E0级板材实际可能E2都不到，必须看检测报告",
+   "stage": "STAGE_05",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_FRAUD",
+    "TYPE_QUALITY"
+   ],
+   "trade": [
+    "TRADE_CABINET",
+    "TRADE_CARPENTRY"
+   ],
+   "material": [
+    "MAT_BOARD"
+   ],
+   "trigger_keywords": [
+    "E0级",
+    "板材",
+    "甲醛",
+    "检测报告",
+    "全包"
+   ],
+   "how_to_avoid": "1. 合同中明确板材品牌+型号+环保等级，不接受模糊描述如'品牌板材'。2. 要求施工方提供板材的检测报告原件或复印件（正规品牌都有）。3. 推荐品牌：兔宝宝/莫干山/千年舟（品牌板，质量稳定），别贪便宜买查不到的杂牌。4. 入住前做CMA认证的室内空气质量检测（甲醛≤0.07mg/m³，TVOC≤0.45mg/m³）。"
+  },
+  {
+   "ku_id": "GZ-SY-00033",
+   "title": "瓷砖需全款预付且广东发货周期约一个月，下单晚了会拖整个工期",
+   "stage": "STAGE_05",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_DELAY",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_TILE"
+   ],
+   "material": [
+    "MAT_TILE"
+   ],
+   "trigger_keywords": [
+    "发货周期",
+    "窝工费",
+    "工期延误",
+    "全款预付",
+    "瓦工进场"
+   ],
+   "how_to_avoid": "1. 瓷砖在设计定稿后第一时间下单（最好在水电开工前），预留至少45天的到货周期。2. 下单前确认色号、批次、规格，要求厂家寄样品确认后再付全款。3. 合同中约定'到货后色差/规格不符的退换条款'，明确退换周期和费用承担。4. 如果预算有限，先付60-70%定金+到货验收后付尾款，降低预付风险。5. 将瓷砖到货时间写入施工进度表，与瓦工进场时间精确衔接。"
+  },
+  {
+   "ku_id": "GZ-SY-00230",
+   "title": "油烟机插座位置不当被遮挡",
+   "stage": "STAGE_05",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COMMUNICATION"
+   ],
+   "trade": [
+    "TRADE_ELECTRICAL",
+    "TRADE_CABINET"
+   ],
+   "material": [
+    "MAT_APPLIANCE"
+   ],
+   "trigger_keywords": [
+    "油烟机",
+    "烟道",
+    "遮挡",
+    "插头",
+    "吊柜"
+   ],
+   "how_to_avoid": "1. 水电改造前，先确定油烟机型号，向厂家索取安装尺寸图。2. 将插座位置标注在图纸上，要求电工按图施工：正上方居中，高度按型号要求。3. 交底时与电工、橱柜设计师三方确认，避开烟道和吊柜背板。4. 验收时用卷尺测量插座位置，并模拟油烟机安装位置，确认插头可正常插入。5. 若未确定型号，预留插座位置时留出余量，并咨询商家常见尺寸。"
+  },
+  {
+   "ku_id": "GZ-SY-00358",
+   "title": "餐边柜未预留散热空间致酒柜损坏",
+   "stage": "STAGE_05",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_CABINET"
+   ],
+   "material": [
+    "MAT_APPLIANCE"
+   ],
+   "trigger_keywords": [
+    "散热",
+    "恒温酒柜",
+    "压缩机",
+    "通风口",
+    "嵌入柜体"
+   ],
+   "how_to_avoid": "1. 设计阶段明确酒柜型号，查阅说明书确认散热要求（背部或底部散热）；2. 柜体背部预留至少50mm散热空间，或底部设置通风百叶；3. 若酒柜为背部散热，柜体背板需开散热孔或使用格栅背板；4. 安装时确认酒柜四周留有10mm以上间隙，避免紧贴柜体；5. 验收时开机运行30分钟，检查酒柜外壳温度是否明显高于环境温度。"
+  },
+  {
+   "ku_id": "GZ-SY-00522",
+   "title": "洗衣机嵌入柜宽度预留不足致安装困难",
+   "stage": "STAGE_05",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_CABINET"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "预留尺寸",
+    "柜体开口",
+    "安装困难",
+    "返工",
+    "洗衣机"
+   ],
+   "how_to_avoid": "1. 购买洗衣机前记录型号尺寸，特别是宽度和深度。2. 设计柜体时，预留尺寸应比洗衣机宽至少20-30mm，深度多留50mm。3. 在合同中写明洗衣机型号和柜体预留尺寸，双方确认。4. 安装前再次核对尺寸，避免返工。"
+  },
+  {
+   "ku_id": "GZ-SY-00523",
+   "title": "洗烘叠放未预留散热空间致机器过热",
+   "stage": "STAGE_05",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_CABINET"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "叠放",
+    "散热孔",
+    "过热",
+    "干衣机",
+    "柜体"
+   ],
+   "how_to_avoid": "1. 设计叠放柜时，两侧和背部预留至少50mm散热空间。2. 柜体正面或侧面设置通风口，或安装散热格栅。3. 确认干衣机说明书中的散热要求，并告知设计师。4. 安装后测试运行，确保散热正常。"
+  },
+  {
+   "ku_id": "GZ-SY-00019",
+   "title": "竣工验收不合格不要签字，尾款10%必须在合格后才付",
+   "stage": "STAGE_07",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_COST"
+   ],
+   "trade": [],
+   "material": [],
+   "trigger_keywords": [
+    "竣工验收",
+    "签字",
+    "尾款",
+    "瓷砖空鼓",
+    "维修"
+   ],
+   "how_to_avoid": "1. 竣工验收前准备验收清单（可从网上下载标准模板），逐项检查打勾。2. 关键项目：瓷砖空鼓用硬币敲击检查（空鼓声不同）、墙面平整度用2米靠尺检查（误差≤3mm）、水电逐一测试。3. 不合格项拍照存档，书面要求整改完成后再签字。4. 如施工方催促签字，坚决拒绝，尾款是你的最后筹码。"
+  },
+  {
+   "ku_id": "GZ-SY-00318",
+   "title": "装修后通风不足甲醛超标入住",
+   "stage": "STAGE_07",
+   "severity": "SEV_HIGH",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_PAINT",
+    "TRADE_CABINET"
+   ],
+   "material": [
+    "MAT_PAINT",
+    "MAT_BOARD"
+   ],
+   "trigger_keywords": [
+    "甲醛",
+    "超标",
+    "通风",
+    "咳嗽",
+    "治理"
+   ],
+   "how_to_avoid": "1. 装修完工后至少通风1-3个月，夏季高温高湿更利于甲醛释放，可加速通风。2. 入住前请专业机构检测甲醛、苯、TVOC，达标后再入住。3. 通风时可将家具柜门、抽屉全部打开，增加空气对流。4. 放置绿萝、活性炭等辅助吸附，但效果有限，不能替代通风。5. 若急于入住，可考虑新风系统或空气净化器，但需持续运行。"
+  },
+  {
+   "ku_id": "GZ-SY-00017",
+   "title": "没量房的报价都是估算，可能跟实际差30-50%",
+   "stage": "STAGE_01",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_COMMUNICATION"
+   ],
+   "trade": [
+    "TRADE_DESIGN"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "量房",
+    "报价",
+    "套内面积",
+    "半包",
+    "估算"
+   ],
+   "how_to_avoid": "1. 至少让2-3家装修公司上门量房（免费的），拿到实测数据后再比价。2. 量房时在场确认：长宽高、门窗位置、水电点位、承重墙位置、防水现状。3. 只有基于量房数据的报价单才有意义，电话报价仅作参考。4. 量房后要求出具详细报价单（分项列出），不接受'一口价'。"
+  },
+  {
+   "ku_id": "GZ-SY-00027",
+   "title": "实际尺寸与原始图纸偏差可达200mm，所有尺寸必须现场复核",
+   "stage": "STAGE_01",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_COMMUNICATION"
+   ],
+   "trade": [
+    "TRADE_DESIGN"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "尺寸偏差",
+    "现场复核",
+    "图纸",
+    "窗帘盒",
+    "梁"
+   ],
+   "how_to_avoid": "1. 设计方案确定前，所有关键尺寸必须现场实测：房间长宽高、门窗洞口、护栏间距、梁底高度、管道位置等。2. 实测数据与图纸数据逐项对照，偏差超过50mm的必须标注并在方案中考虑。3. 定制家具/阳光房/橱柜等需要精确尺寸的产品，必须在硬装完工后二次测量再下单。4. 保留现场测量的原始数据（照片+手写记录），作为争议时的证据。5. 图纸不做修改时，以实际尺寸为准进行施工。"
+  },
+  {
+   "ku_id": "GZ-SY-00007",
+   "title": "沈阳市场'全包'不含家具家电软装，业主常误解为拎包入住",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_COMMUNICATION",
+    "TYPE_COST"
+   ],
+   "trade": [],
+   "material": [],
+   "trigger_keywords": [
+    "全包",
+    "软装",
+    "家具家电",
+    "预算",
+    "误解"
+   ],
+   "how_to_avoid": "1. 签约前明确问：'全包含家具家电吗？含窗帘灯具吗？'并要求书面列明含/不含清单。2. 做预算时按'全包价+家电家具+软装'三部分分别规划，不要把全包价当成总预算。3. 如果装修公司宣传'拎包入住'，要求在合同中逐项列出包含的所有品类。"
+  },
+  {
+   "ku_id": "GZ-SY-00008",
+   "title": "地暖报价不含分水器，每组200-400元需单独计算",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_PLUMBING"
+   ],
+   "material": [
+    "MAT_PIPE",
+    "MAT_HARDWARE"
+   ],
+   "trigger_keywords": [
+    "地暖",
+    "分水器",
+    "回填层",
+    "温控阀",
+    "增项"
+   ],
+   "how_to_avoid": "1. 拿到地暖报价后立即问：含分水器吗？含回填层吗？含温控阀吗？2. 要求分项报价单：地暖管每平单价+分水器每组单价+回填层单价+温控阀单价。3. 对比不同商家时，统一用'含所有配件的总价'横向比较。"
+  },
+  {
+   "ku_id": "GZ-SY-00009",
+   "title": "乳胶漆报价不含底漆，底漆面漆必须分开列项",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_QUALITY"
+   ],
+   "trade": [
+    "TRADE_PAINT"
+   ],
+   "material": [
+    "MAT_PAINT"
+   ],
+   "trigger_keywords": [
+    "乳胶漆",
+    "底漆",
+    "起皮脱落",
+    "返工",
+    "列项"
+   ],
+   "how_to_avoid": "1. 报价单上乳胶漆必须分项列出：底漆单价+面漆单价，注明'含1遍底漆+2遍面漆'。2. 施工中现场确认底漆是否刷涂，可用手摸检查附着力。3. 使用与面漆同品牌或配套的底漆，不用杂牌底漆+大牌面漆。4. 验收时检查墙面有无起鼓、起皮，重点看潮湿区域（卫生间外墙、厨房）。"
+  },
+  {
+   "ku_id": "GZ-SY-00032",
+   "title": "通顶门每超2.4米每厘米加收10元，实际层高2.7米时一樘门多收300元",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_DOOR"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "通顶门",
+    "加价",
+    "层高",
+    "铝蜂窝",
+    "附加费"
+   ],
+   "how_to_avoid": "1. 询价时明确告知实际层高，要求按实际门高报价（而非2.4米标准高度）。2. 确认报价含门芯类型（木方/铝蜂窝），不同门芯价格差异大。3. 合同中写明'门高按实际层高制作，价格含超高部分'，避免签约后加收。4. 通顶门安装前测量门洞实际高度，与定制尺寸核对，误差≤3mm。"
+  },
+  {
+   "ku_id": "GZ-SY-00038",
+   "title": "定制金属配件报价误报7000元实为700元，定制件报价必须逐项核实",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_FRAUD"
+   ],
+   "trade": [
+    "TRADE_CARPENTRY"
+   ],
+   "material": [
+    "MAT_HARDWARE"
+   ],
+   "trigger_keywords": [
+    "金属配件",
+    "报价核实",
+    "误报",
+    "玄关",
+    "定制"
+   ],
+   "how_to_avoid": "1. 所有定制件报价必须逐项核实，尤其是金额超过1000元的单项。2. 要求厂家出具报价明细表（材料费+加工费+安装费分项），不接受'一口价'。3. 定制件下单前确认：是否有最低起订量？单件打样费是多少？4. 对比定制件与替代方案（木墩/石材/亚克力）的成本差异，选择性价比最高的方案。5. 发现报价异常（如同类产品差价10倍），要求厂家书面解释并重新报价。"
+  },
+  {
+   "ku_id": "GZ-SY-00039",
+   "title": "弧形墙板做一体弧工艺费用翻倍，分段制作可节省30-50%成本",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_DESIGN"
+   ],
+   "trade": [
+    "TRADE_CARPENTRY"
+   ],
+   "material": [
+    "MAT_BOARD"
+   ],
+   "trigger_keywords": [
+    "弧形墙板",
+    "一体弧",
+    "分段制作",
+    "工艺成本",
+    "节省"
+   ],
+   "how_to_avoid": "1. 设计方案中出现弧形元素时，第一时间询问'一体弧'和'分段制作'的价格差异。2. 对于半径≥500mm的大弧面，分段制作是性价比最高的选择。3. 要求厂家提供两种工艺的样品或案例照片，对比视觉效果后再决定。4. 合同中明确弧形墙板的工艺标准和验收要求（接缝处理、表面平整度）。"
+  },
+  {
+   "ku_id": "GZ-SY-00040",
+   "title": "开关面板品牌变更和新增点位漏算，结算时多出数千元",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [
+    "MAT_WIRE",
+    "MAT_HARDWARE"
+   ],
+   "trigger_keywords": [
+    "开关面板",
+    "点位",
+    "漏算",
+    "结算",
+    "品牌变更"
+   ],
+   "how_to_avoid": "1. 每次品牌变更时立即更新预算文件中的开关面板单价和总价。2. 设计方案每次修改后，同步更新预算中的点位数量统计。3. 建立'设计变更→预算联动'机制：任何新增点位必须在24小时内更新到预算表。4. 开关面板费用单独列项，不与'电路改造'合并，便于追踪。5. 在合同中约定'新增点位超过初始数量X%时，需业主书面确认后才可施工'。"
+  },
+  {
+   "ku_id": "GZ-SY-00042",
+   "title": "墙板厚度从12mm减至8mm省了钱但隔音和质感明显下降",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_CARPENTRY"
+   ],
+   "material": [
+    "MAT_BOARD"
+   ],
+   "trigger_keywords": [
+    "墙板厚度",
+    "隔音",
+    "质感",
+    "空洞声",
+    "预算减配"
+   ],
+   "how_to_avoid": "1. 墙板选型时要求对比12mm和8mm的实物样品，亲自触摸和敲击感受差异。2. 卧室和书房等对隔音有要求的区域，坚持使用12mm以上厚度。3. 客厅等公共区域可考虑8mm（如预算有限），但需接受隔音和质感的妥协。4. 合同中写明墙板厚度、品牌和型号，防止施工方以薄充厚。5. 设计师在推荐减薄方案时，必须书面告知性能差异并获得业主签字确认。"
+  },
+  {
+   "ku_id": "GZ-SY-00043",
+   "title": "型材门价格逼近预算上限，删减电动功能可省数千但牺牲便利性",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_COMMUNICATION"
+   ],
+   "trade": [
+    "TRADE_DOOR"
+   ],
+   "material": [
+    "MAT_HARDWARE"
+   ],
+   "trigger_keywords": [
+    "型材门",
+    "电动功能",
+    "玻璃门",
+    "开槽布线",
+    "预算上限"
+   ],
+   "how_to_avoid": "1. 电动门功能在方案阶段就要明确'是否需要'，不要先报高价再删减。2. 如果未来可能加装电动功能，建议在水电阶段预埋电源线和信号管（成本仅200-300元/樘），即使当前不装电机，后期加装也无需破坏墙面。3. 门的配置优先级排序：隔音>密封>电动功能>装饰效果。4. 对比'现在不装+后期加装'的总成本（约5000-8000元/樘）vs '一步到位'的成本差，做出理性决策。"
+  },
+  {
+   "ku_id": "GZ-SY-00046",
+   "title": "瓷砖损耗超5%部分应由装修公司承担，合同里必须写明",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_COMMUNICATION"
+   ],
+   "trade": [
+    "TRADE_TILE"
+   ],
+   "material": [
+    "MAT_TILE"
+   ],
+   "trigger_keywords": [
+    "瓷砖损耗",
+    "损耗率",
+    "加工费",
+    "切割精度",
+    "合同条款"
+   ],
+   "how_to_avoid": "1. 合同中明确写入'瓷砖损耗率不超过5%，超出部分由施工方承担'条款。2. 同时约定瓷砖加工费按实际发生量结算（非一口价），避免多报少做。3. 施工前确认瓷砖总数量（含损耗预留），施工后核对实际用量与剩余量。4. 合同中删除'不可退换'等模糊表述，改为'方案变更不支持整项退货'，避免歧义。5. 美缝费用也应约定按实际面积结算，而非按估算面积一口价。"
+  },
+  {
+   "ku_id": "GZ-SY-00060",
+   "title": "异地装修施工材料采购价可能高于本地，需提前评估",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_DESIGN"
+   ],
+   "material": [
+    "MAT_NONE"
+   ],
+   "trigger_keywords": [
+    "异地装修",
+    "材料价",
+    "超支",
+    "辽阳",
+    "采购"
+   ],
+   "how_to_avoid": "1. 报价阶段：要求装修公司提供异地施工的详细报价，明确区分本地采购和异地采购的材料价格差异。2. 材料采购：确认是否可以从施工方所在城市采购后运输到异地，计算运输成本对比当地采购价。3. 合同约定：合同中明确异地施工的额外费用项(运输/差旅/住宿)，设定上限比例(如不超过总价的8%)。4. 替代方案：对比异地公司和本地施工队的总报价(含所有额外费用)，选择综合成本更低的方案。"
+  },
+  {
+   "ku_id": "GZ-SY-00137",
+   "title": "瓷砖不同规格混算单价",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_TILE"
+   ],
+   "material": [
+    "MAT_TILE"
+   ],
+   "trigger_keywords": [
+    "瓷砖",
+    "规格",
+    "混算",
+    "小砖",
+    "加价"
+   ],
+   "how_to_avoid": "1. 在报价阶段，要求施工方按瓷砖规格分项列明单价，如300x300、300x600、600x600、800x800等，每种规格单独报价。2. 核对报价单中是否包含所有实际使用的瓷砖规格，避免漏项。3. 在合同中明确约定，若实际铺贴规格与报价单不符，需提前书面确认价格。4. 结算时逐项核对实际铺贴面积与单价，防止混算。"
+  },
+  {
+   "ku_id": "GZ-SY-00138",
+   "title": "瓷砖加工条计价陷阱",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_TILE"
+   ],
+   "material": [
+    "MAT_TILE"
+   ],
+   "trigger_keywords": [
+    "瓷砖加工",
+    "波打线",
+    "现场切割",
+    "损耗",
+    "计价"
+   ],
+   "how_to_avoid": "1. 在报价单中明确注明加工条是“厂家成品”还是“现场加工”，并分别报价。2. 若选择厂家加工，要求提供加工证明或送货单，避免施工方谎称现场加工。3. 现场加工时，提前与施工方确认加工费单价，并写入合同。4. 结算时核对加工条数量与计价方式是否一致。"
+  },
+  {
+   "ku_id": "GZ-SY-00142",
+   "title": "吊顶面积计算方式混淆导致报价虚高",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_CARPENTRY"
+   ],
+   "material": [
+    "MAT_BOARD"
+   ],
+   "trigger_keywords": [
+    "吊顶",
+    "报价",
+    "延米",
+    "边棚",
+    "结算"
+   ],
+   "how_to_avoid": "1. 在报价阶段，要求设计师明确列出每种吊顶造型的计价单位（延米/面积/个数），并写入合同附件。2. 核对边棚计算方式：确认是否按（长+宽）×2取周长，且宽度≤700mm按边棚计价。3. 单独询问面积小于2㎡的造型棚是否单独立项，避免被并入大面积棚面。4. 确认平棚按阴影面积（即实际投影面积）计算，而非展开面积。5. 弧形角等特殊造型按个数报价，需提前确认单价。6. 对比多家报价，确保计价方式一致后再签约。"
+  },
+  {
+   "ku_id": "GZ-SY-00143",
+   "title": "小面积造型吊顶漏项或重复收费",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_CARPENTRY"
+   ],
+   "material": [
+    "MAT_BOARD"
+   ],
+   "trigger_keywords": [
+    "造型吊顶",
+    "玄关",
+    "增项",
+    "漏项",
+    "报价单"
+   ],
+   "how_to_avoid": "1. 在报价单审核时，逐项检查是否有面积小于2㎡的吊顶区域，要求单独列出。2. 明确合同条款：所有造型吊顶必须提前报价，不得施工中临时增项。3. 若设计师未提及小面积造型，主动询问是否需单独计费。4. 签约前，用卷尺测量实际吊顶面积，与报价单核对。5. 保留报价单和沟通记录，作为后期维权依据。"
+  },
+  {
+   "ku_id": "GZ-SY-00144",
+   "title": "吊顶高度影响单价，报价未明确导致加价",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_COMMUNICATION"
+   ],
+   "trade": [
+    "TRADE_CARPENTRY"
+   ],
+   "material": [
+    "MAT_BOARD"
+   ],
+   "trigger_keywords": [
+    "吊顶高度",
+    "加价",
+    "口头约定",
+    "工期延误",
+    "造型"
+   ],
+   "how_to_avoid": "1. 在报价单中明确标注每种造型吊顶的高度范围（如≤20cm、20-30cm等）。2. 签约前，与设计师确认所有吊顶高度，并写入合同。3. 若报价单未注明高度，要求补充说明，避免模糊条款。4. 施工前，现场复核吊顶高度，与合同一致。5. 保留设计图纸和沟通记录，作为依据。"
+  },
+  {
+   "ku_id": "GZ-SY-00146",
+   "title": "石膏线按延米单独计费被漏算",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_CARPENTRY"
+   ],
+   "material": [
+    "MAT_BOARD"
+   ],
+   "trigger_keywords": [
+    "石膏线",
+    "背景墙",
+    "延米",
+    "停工",
+    "漏算"
+   ],
+   "how_to_avoid": "1. 签约前要求设计师在报价单中明确列出石膏线的计价方式，必须按延米单独列项，并注明单价和预估米数。2. 核对背景墙造型报价是否包含石膏板贴面、收边等，要求书面注明包含与不包含的项目。3. 若合同未单列石膏线，施工中遇到增项，先核对合同条款，再与设计师确认是否属于漏项，要求设计师承担或协商解决。4. 业主可要求将石膏线费用在预算中预估，避免后期被动。"
+  },
+  {
+   "ku_id": "GZ-SY-00148",
+   "title": "造型不含壁纸镜片玻璃安装费",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_CARPENTRY",
+    "TRADE_TILE"
+   ],
+   "material": [
+    "MAT_BOARD",
+    "MAT_GLUE"
+   ],
+   "trigger_keywords": [
+    "壁纸",
+    "镜片",
+    "安装费",
+    "增项",
+    "造型"
+   ],
+   "how_to_avoid": "1. 签约前逐项确认造型报价包含哪些内容，明确壁纸、镜片、玻璃安装是否另计。2. 要求设计师在报价单中注明'不含壁纸、镜片、玻璃安装'，并预估这些项目的费用。3. 若需安装，提前询价并写入合同，避免施工中被动增项。4. 业主可自行采购材料并找第三方安装，对比价格。"
+  },
+  {
+   "ku_id": "GZ-SY-00149",
+   "title": "超出标准尺寸造型加收1500元",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_CARPENTRY"
+   ],
+   "material": [
+    "MAT_BOARD"
+   ],
+   "trigger_keywords": [
+    "超尺寸",
+    "加收",
+    "背景墙",
+    "协商",
+    "标准尺寸"
+   ],
+   "how_to_avoid": "1. 签约前设计师必须现场测量实际尺寸，并书面确认是否在标准范围内。2. 若超出标准，要求设计师在报价单中明确标注额外费用，并说明计算方式。3. 业主可要求设计师提供尺寸计算书，核对是否超限。4. 合同注明'超出标准尺寸按按当期标准单价/项加收'，避免后期争议。"
+  },
+  {
+   "ku_id": "GZ-SY-00152",
+   "title": "阁楼复式水电面积按阴影面积1.25倍计算",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_PLUMBING"
+   ],
+   "material": [
+    "MAT_WIRE"
+   ],
+   "trigger_keywords": [
+    "阁楼",
+    "复式",
+    "阴影面积",
+    "水电改造",
+    "计费"
+   ],
+   "how_to_avoid": "1. 签约前要求装修公司明确写出面积计算方式，特别是阁楼、复式、别墅等特殊户型。2. 自行计算：阴影面积=套内面积-挑空面积，电路改造面积=阴影面积×1.25倍。3. 别墅洋房按外墙体面积×1.25倍计算，提前核对。4. 将面积计算公式写入合同附件，避免口头约定。5. 若报价单面积与自行计算不符，要求对方书面解释。"
+  },
+  {
+   "ku_id": "GZ-SY-00153",
+   "title": "赠送房间无电源需另收原始布线费",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_OMISSION",
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_PLUMBING"
+   ],
+   "material": [
+    "MAT_WIRE"
+   ],
+   "trigger_keywords": [
+    "赠送阁楼",
+    "无电源",
+    "配电箱",
+    "布线费",
+    "加钱"
+   ],
+   "how_to_avoid": "1. 签约前检查所有赠送空间（阁楼、地下室、露台、挑空搭板区域）是否有电源。2. 若无电源，要求装修公司在报价单中明确列出'原始布线费'项目及金额。3. 将赠送区域的水电需求写入设计图纸和合同。4. 签约前与设计师逐项确认每个空间的电路改造范围。5. 若报价单未包含，要求书面承诺免费布线或明确费用。"
+  },
+  {
+   "ku_id": "GZ-SY-00163",
+   "title": "下水管隔音处理按根漏算",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_PLUMBING"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "下水管",
+    "隔音",
+    "漏算",
+    "报价单",
+    "增项"
+   ],
+   "how_to_avoid": "1. 签约前要求装修公司在报价单中明确列出下水管隔音处理的数量，按'根'计价，并注明每根单价。2. 现场自行清点卫生间、厨房、阳台等所有下水立管数量，与报价单核对。3. 在合同备注中写明'下水管隔音处理按实际根数计算，数量以现场为准'，避免后期争议。4. 若报价单未列此项，主动询问是否包含，并要求书面确认。"
+  },
+  {
+   "ku_id": "GZ-SY-00166",
+   "title": "窗门口抹灰漏项导致增项",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_PAINT"
+   ],
+   "material": [
+    "MAT_CEMENT"
+   ],
+   "trigger_keywords": [
+    "窗洞口",
+    "抹灰",
+    "漏项",
+    "找平",
+    "增项"
+   ],
+   "how_to_avoid": "1. 报价时明确要求列出'窗门口抹灰'项目，按个或按米计价。2. 让设计师现场测量所有窗洞口尺寸，计算抹灰面积，写入报价单。3. 签约前核对报价单中是否包含门窗洞侧边、上沿的抹灰处理。4. 若报价单未列，主动询问并书面确认是否包含，避免后期增项。"
+  },
+  {
+   "ku_id": "GZ-SY-00167",
+   "title": "防水石膏板吊顶墙面基层处理漏项",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_PAINT"
+   ],
+   "material": [
+    "MAT_PAINT"
+   ],
+   "trigger_keywords": [
+    "防水石膏板",
+    "防水腻子",
+    "发霉",
+    "基层",
+    "卫生间"
+   ],
+   "how_to_avoid": "1. 设计阶段明确卫生间、厨房吊顶材质，若用防水石膏板，同步确认墙面处理方案。2. 报价单中要求列出'防水石膏板吊顶对应墙面防水腻子'项目，并注明单价。3. 签约前与设计师确认墙面防水处理范围，写入合同。4. 若报价单未列，主动询问并书面确认，避免后期增项。"
+  },
+  {
+   "ku_id": "GZ-SY-00168",
+   "title": "墙体砌筑规格不符导致单价争议",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_DEMOLISH"
+   ],
+   "material": [
+    "MAT_CEMENT"
+   ],
+   "trigger_keywords": [
+    "砌墙",
+    "24墙",
+    "规格",
+    "单价",
+    "争议"
+   ],
+   "how_to_avoid": "1. 报价时明确墙体砌筑的规格（12墙、24墙等），要求写入报价单。2. 确认砌筑材料（红砖、加气块、轻质砖），不同材料单价不同。3. 签约前让设计师现场确认墙体位置和厚度要求，书面记录。4. 施工前与工长再次确认规格，避免误解。"
+  },
+  {
+   "ku_id": "GZ-SY-00169",
+   "title": "灶台煤气改造最低收费陷阱",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_PLUMBING"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "煤气管道",
+    "灶台",
+    "移位",
+    "最低收费",
+    "燃气"
+   ],
+   "how_to_avoid": "1. 报价时明确询问煤气改造是否有最低收费标准，金额多少。2. 让装修公司书面确认煤气改造费用，包括最低收费条款。3. 若需自行联系燃气公司，提前电话咨询收费标准。4. 签约前将煤气改造费用写入合同，避免后期加价。"
+  },
+  {
+   "ku_id": "GZ-SY-00170",
+   "title": "阁楼地下室电路改造按特殊单价计费",
+   "stage": "STAGE_03",
+   "severity": "SEV_MEDIUM",
+   "problem_type": [
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_ELECTRICAL"
+   ],
+   "material": [
+    "MAT_WIRE"
+   ],
+   "trigger_keywords": [
+    "阁楼",
+    "电路改造",
+    "点位",
+    "计价",
+    "增项"
+   ],
+   "how_to_avoid": "1. 报价时明确询问阁楼、地下室等特殊空间的电路改造计价方式。2. 要求报价单中单独列出'阁楼电路改造'项目，注明按按当期标准单价/㎡计算。3. 签约前确认特殊空间面积，计算总费用并写入合同。4. 若报价单未列，主动询问并书面确认，避免后期增项。"
+  },
+  {
+   "ku_id": "GZ-SY-00010",
+   "title": "阳台封窗不属于硬装范畴，通常需业主自找专业封窗公司",
+   "stage": "STAGE_03",
+   "severity": "SEV_LOW",
+   "problem_type": [
+    "TYPE_COMMUNICATION",
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_DOOR"
+   ],
+   "material": [],
+   "trigger_keywords": [
+    "封窗",
+    "阳台",
+    "半包",
+    "进水",
+    "工期"
+   ],
+   "how_to_avoid": "1. 做装修预算时单独列出阳台封窗费用（5000-15000元），不要包含在硬装预算内。2. 封窗时间应在硬装开工前或水电改造前完成，避免后期施工受雨水影响。3. 硬装合同中明确'不含阳台封窗'，或让装修公司代为协调封窗（但费用另计）。"
+  },
+  {
+   "ku_id": "GZ-SY-00050",
+   "title": "装修报价默认不含税，要开发票需额外补缴3-6%税点",
+   "stage": "STAGE_03",
+   "severity": "SEV_LOW",
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_COMMUNICATION"
+   ],
+   "trade": [],
+   "material": [],
+   "trigger_keywords": [
+    "发票",
+    "税点",
+    "报价不含税",
+    "公账转账",
+    "装修贷款"
+   ],
+   "how_to_avoid": "1. 签约前明确询问'报价含不含税？开票需要额外付多少？'并写入合同。2. 如果需要发票（贷款/报销/公积金），在比价时就将税点纳入总成本对比。3. 要求装修公司提供普票和专票的税率说明（小规模3%、一般纳税人6-9%）。4. 合同中约定'如需开票，税点为X%，由业主/装修公司承担'。5. 付款时通过公账转账（银行转账至装修公司对公账户），保留完整的付款凭证。"
+  },
+  {
+   "ku_id": "GZ-SY-00139",
+   "title": "甲供沙水泥套边线减价误算",
+   "stage": "STAGE_03",
+   "severity": "SEV_LOW",
+   "problem_type": [
+    "TYPE_COST"
+   ],
+   "trade": [
+    "TRADE_TILE"
+   ],
+   "material": [
+    "MAT_CEMENT"
+   ],
+   "trigger_keywords": [
+    "甲供",
+    "沙子水泥",
+    "套边线",
+    "减价",
+    "面积计算"
+   ],
+   "how_to_avoid": "1. 仔细阅读报价单中的减价条款，确认单位是“每㎡”还是“每m”。2. 要求施工方在报价单中明确标注计算方式，如“套边线面积=长度×宽度”。3. 结算时复核减价金额，用实际面积乘以单价差。4. 若不确定，可咨询第三方或设计师。"
+  },
+  {
+   "ku_id": "GZ-SY-00164",
+   "title": "小面积造型吊顶按单处收费易漏项",
+   "stage": "STAGE_03",
+   "severity": "SEV_LOW",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_CARPENTRY"
+   ],
+   "material": [
+    "MAT_BOARD"
+   ],
+   "trigger_keywords": [
+    "造型吊顶",
+    "弧形",
+    "漏项",
+    "计价",
+    "木工"
+   ],
+   "how_to_avoid": "1. 设计阶段明确所有吊顶造型的位置和面积，让设计师标注清楚。2. 报价时逐项询问：面积小于2㎡的造型是否按单处收费？单价多少？3. 要求报价单中单独列出'造型吊顶（单处）'项目，并注明数量。4. 签约前将所有造型项目拍照或画图附在合同后，作为依据。"
+  },
+  {
+   "ku_id": "GZ-SY-00165",
+   "title": "弧形石膏线需加收基层处理费",
+   "stage": "STAGE_03",
+   "severity": "SEV_LOW",
+   "problem_type": [
+    "TYPE_OMISSION"
+   ],
+   "trade": [
+    "TRADE_CARPENTRY"
+   ],
+   "material": [
+    "MAT_BOARD"
+   ],
+   "trigger_keywords": [
+    "石膏线",
+    "基层处理",
+    "找平",
+    "增项",
+    "油工"
+   ],
+   "how_to_avoid": "1. 设计阶段问清楚：弧形石膏线是否需要石膏板基层？基层费用是否包含？2. 报价单中要求分别列出'石膏板吊平棚'和'弧形石膏线'两项，并注明面积和单价。3. 若设计师说'直接贴'，要求书面承诺，避免后期扯皮。4. 签约前让设计师现场确认顶面平整度，判断是否需要基层。"
+  },
+  {
+   "ku_id": "GZ-SY-00173",
+   "title": "放线后未签字确认致后期扯皮",
+   "severity": "SEV_MEDIUM",
+   "stage": "STAGE_02",
+   "trade": [
+    "TRADE_DESIGN"
+   ],
+   "material": [],
+   "problem_type": [
+    "TYPE_COMMUNICATION",
+    "TYPE_COST"
+   ],
+   "trigger_keywords": [
+    "签字确认",
+    "水槽",
+    "烟道",
+    "排烟管",
+    "扯皮"
+   ],
+   "how_to_avoid": "1. 放线当天业主本人务必到场，如无法到场，委托懂行的亲友并授权签字。2. 放线完成后，对照设计图纸逐项检查，确认无误后在放线确认单上签字。3. 签字前拍照或录像留存，记录放线现场全貌和关键点位。4. 在确认单上注明'已核对所有点位，无异议'等字样，防止后期篡改。5. 保留签字确认单原件或扫描件，作为竣工纠纷的凭证。"
+  },
+  {
+   "ku_id": "GZ-SY-00289",
+   "title": "水电材料品牌未确认进场后难更换",
+   "severity": "SEV_MEDIUM",
+   "stage": "STAGE_04",
+   "trade": [
+    "TRADE_PLUMBING"
+   ],
+   "material": [
+    "MAT_PIPE",
+    "MAT_WIRE"
+   ],
+   "problem_type": [
+    "TYPE_COST",
+    "TYPE_COMMUNICATION"
+   ],
+   "trigger_keywords": [
+    "材料品牌",
+    "电线",
+    "线径",
+    "监理巡检",
+    "更换材料"
+   ],
+   "how_to_avoid": "1. 在报价签约阶段，就要求合同中明确列出水电材料的品牌、型号、规格。2. 材料进场当天，业主或监理到场验收，核对品牌型号与合同一致，拍照留证。3. 若发现不符，立即要求停工更换，不要等铺设后再处理。4. 可要求施工方提供材料采购凭证或授权书，确保正品。"
+  },
+  {
+   "ku_id": "GZ-SY-00020",
+   "title": "装修维权从第一天就要建证据档案，否则后期无法举证",
+   "severity": "SEV_MEDIUM",
+   "stage": "STAGE_08",
+   "trade": [],
+   "material": [],
+   "problem_type": [
+    "TYPE_DELAY",
+    "TYPE_QUALITY"
+   ],
+   "trigger_keywords": [
+    "维权",
+    "证据",
+    "质保",
+    "开裂",
+    "投诉"
+   ],
+   "how_to_avoid": "1. 从装修第一天建立'装修档案文件夹'（手机/电脑各存一份），包含：合同、报价单、付款凭证、微信记录、现场照片/视频。2. 每个施工阶段拍照存档（水电走管图尤其重要）。3. 所有沟通尽量用微信文字（而非电话），留下文字记录。4. 出问题时第一步：整理证据→第二步：书面通知施工方→第三步：12315/消协→第四步：法院。"
+  },
+  {
+   "ku_id": "GZ-SY-00162",
+   "title": "乳胶漆调色后开裂不保修",
+   "severity": "SEV_MEDIUM",
+   "stage": "STAGE_08",
+   "trade": [
+    "TRADE_PAINT"
+   ],
+   "material": [
+    "MAT_PAINT"
+   ],
+   "problem_type": [
+    "TYPE_QUALITY",
+    "TYPE_COMMUNICATION"
+   ],
+   "trigger_keywords": [
+    "乳胶漆",
+    "调色",
+    "开裂",
+    "色差",
+    "保修"
+   ],
+   "how_to_avoid": "1. 签约时明确询问调色乳胶漆的保修政策，写入合同。2. 保留乳胶漆色号及调色配方，留一桶原漆备用。3. 若墙面开裂，要求施工方修复大白后，用备用漆修补，并接受轻微色差。4. 选择品牌成品色卡颜色，而非现场调色，便于后期补漆。"
+  }
+ ]
+}

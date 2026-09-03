@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-zhishe-baojia-shenhe",
-  "version": "0.3.0",
-  "description": "知设装修报价审核插件 - 装修报价单智能审核与风险识别(异常单价识别+漏项检测+地区价格对标+视觉OCR截图输入)",
+  "version": "0.4.1",
+  "description": "知设装修报价审核插件 - 装修报价单与合同智能审核与风险识别(异常单价识别+漏项检测+地区价格对标+视觉OCR截图输入+19条合同条款风险规则+签约避坑提示)",
   "type": "module",
   "files": [
     "lib"
@@ -13,8 +13,11 @@
     "cost-audit",
     "ocr",
     "vision",
+    "contract-audit",
     "装修",
     "报价",
+    "合同",
+    "避坑",
     "审核"
   ],
   "peerDependencies": {
