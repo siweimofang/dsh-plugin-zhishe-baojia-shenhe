@@ -13,6 +13,7 @@
 import { resolveVisionProvider } from '../lib/vision/providers.js';
 import { parseLooseJSON } from '../lib/vision/utils.js';
 import { mergeQuotePages } from '../lib/vision/quote_ocr.js';
+import { isPeakNow, offpeakMeta } from '../lib/vision/offpeak.js';
 import { parseItemsFromStructured } from '../lib/quote_parser.js';
 import { auditQuote } from '../lib/engines/anomaly_engine.js';
 
@@ -136,6 +137,35 @@ console.log('[E] anomaly_engine.auditQuote 数组直通');
 
   const e7 = auditQuote([], { city: '沈阳', tier: '中档' });
   check('E7 空数组 → success:false(原行为)', e7.success === false);
+}
+
+// ============ [F] offpeak 峰谷判断(批次二) ============
+console.log('[F] vision/offpeak.js');
+{
+  // 固定时刻+显式时区偏移 → 与宿主机时区无关
+  const cases = [
+    ['2026-09-05T08:59:00+08:00', false], // 高峰前1分钟
+    ['2026-09-05T09:00:00+08:00', true],  // 高峰起点(含)
+    ['2026-09-05T11:59:00+08:00', true],
+    ['2026-09-05T12:00:00+08:00', false], // 午休=闲时
+    ['2026-09-05T13:59:00+08:00', false],
+    ['2026-09-05T14:00:00+08:00', true],  // 下午高峰起点(含)
+    ['2026-09-05T17:59:00+08:00', true],
+    ['2026-09-05T18:00:00+08:00', false], // 高峰终点(不含)
+    ['2026-09-05T23:00:00+08:00', false], // 夜间闲时
+  ];
+  let allOk = true;
+  for (const [t, expect] of cases) {
+    if (isPeakNow(new Date(t)) !== expect) allOk = false;
+  }
+  check('F1 九个边界时刻全对(9-12/14-18含起点不含终点, 午休=闲时)', allOk);
+
+  // UTC时刻等价验证: 03:00Z = 11:00北京 → 高峰
+  check('F2 UTC输入等价(03:00Z=11:00北京=高峰)', isPeakNow(new Date('2026-09-05T03:00:00Z')) === true);
+
+  const meta = offpeakMeta(new Date('2026-09-05T10:00:00+08:00'));
+  check('F3 meta形状: peak/offpeak互斥+北京时间串+窗口说明', meta.peak === true && meta.offpeak === false
+    && meta.beijing_time === '2026-09-05 10:00' && /9:00-12:00/.test(meta.peak_windows) && meta.note.length > 10);
 }
 
 // 恢复环境
